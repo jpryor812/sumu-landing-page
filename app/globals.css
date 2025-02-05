@@ -9,7 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #001405;
     --foreground: #ededed;
   }
 }
@@ -20,6 +20,56 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.gradient-text {
+  background: linear-gradient(40deg,
+    #FFFFFF 0%,
+    #FFD66D 33%,
+    #FFFFFF 50%,
+    #FFD66D 67%,
+    #FFFFFF 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
 .gradient-bg {
-  background: linear-gradient(120deg, rgb(179, 214, 255) 0%, rgb(173, 170, 255) 25%, rgb(235, 168, 255) 50%, rgb(255, 175, 189) 75%, rgb(255, 181, 137) 100%);
+  background: linear-gradient(40deg,
+    #FFFFFF 0%,
+    #FFD66D 33%,
+    #FFFFFF 50%,
+    #FFD66D 67%,
+    #FFFFFF 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(var(--translate-x1), var(--translate-y1)) scale(1.1);
+  }
+  66% {
+    transform: translate(var(--translate-x2), var(--translate-y2)) scale(0.9);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.animate-float {
+  animation: float ease-in-out infinite;
 }

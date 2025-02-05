@@ -13,12 +13,17 @@ import RewardsExplanation from '@/components/RewardsExplanation';
 import ChargeForContent from '@/components/ChargeForContent'
 import CreatorPage from '@/components/CreatorPage';
 import GrowthFeatures from '@/components/GrowthFeatures';
+import AnimatedBackground from '@/components/AnimatedBackground';
+import VideoBackground from '@/components/VideoBackground';
 
 export default function Home() {
   return (
-    <main>
-      <div className="relative h-screen">
-        <div className="absolute inset-0 bg-[url('/digital-art-background.png')] opacity-70 bg-cover" />
+    <main className="relative">
+      {/* First section with video background */}
+      <div className="relative min-h-screen">
+        <VideoBackground />
+        
+        {/* Content for first section */}
         <div className="relative z-10">
           <Header />
           <SuumHeader />
@@ -26,14 +31,11 @@ export default function Home() {
           <SubHeroText />
           <CTAButton />
           <SubText />
-          </div>
-          </div>
-      <div className="min-h-screen relative">
-        {/* Gradient background */}
-        <div className="absolute inset-0" style={{
-          background: 'linear-gradient(120deg, rgb(179, 214, 255) 0%, rgb(173, 170, 255) 25%, rgb(235, 168, 255) 50%, rgb(255, 175, 189) 75%, rgb(255, 181, 137) 100%)'
-        }} />
-        {/* Content container with z-index */}
+        </div>
+      </div>
+
+      {/* Second section with animated background */}
+      <div className="relative min-h-screen">
         <div className="relative z-10">
           <PageTwoHeader />
           <CreatorPlatformText />
@@ -46,5 +48,5 @@ export default function Home() {
         </div>
       </div>
     </main>
-);
+  );
 }
