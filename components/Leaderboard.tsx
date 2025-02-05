@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { leaderboardData } from '@/const/leaderboardData';
 import LeaderboardRow from './LeaderboardRow';
 

@@ -43,7 +43,7 @@ export default function LeaderboardRow({ entry }: Props) {
           <p>{entry.earnings} USDC</p>
           <Image 
             src="/USDC_Logo.png"
-            alt="SOL"
+            alt="USDC Logo"
             width={20}
             height={20}
           />

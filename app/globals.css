@@ -19,3 +19,7 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.gradient-bg {
+  background: linear-gradient(120deg, rgb(179, 214, 255) 0%, rgb(173, 170, 255) 25%, rgb(235, 168, 255) 50%, rgb(255, 175, 189) 75%, rgb(255, 181, 137) 100%);
+}

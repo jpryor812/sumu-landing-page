@@ -11,6 +11,8 @@ import LowFeeHighReward from '@/components/LowFeeHighReward';
 import Leaderboard from '@/components/Leaderboard';
 import RewardsExplanation from '@/components/RewardsExplanation';
 import ChargeForContent from '@/components/ChargeForContent'
+import CreatorPage from '@/components/CreatorPage';
+import GrowthFeatures from '@/components/GrowthFeatures';
 
 export default function Home() {
   return (
@@ -40,6 +42,7 @@ export default function Home() {
           <Leaderboard />
           <RewardsExplanation />
           <ChargeForContent />
+          <GrowthFeatures />
         </div>
       </div>
     </main>
