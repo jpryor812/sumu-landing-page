@@ -14,7 +14,6 @@ export default function RecommendationsPage () {
                     </div>
                 </div>
                 {/* insert component for reccomendation block */}
-
         </div>
             </div>        
     );

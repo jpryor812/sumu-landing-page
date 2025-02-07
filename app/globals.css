@@ -9,7 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #001405;
+    --background: #fefefe;
     --foreground: #ededed;
   }
 }
@@ -31,19 +31,30 @@ body {
   background-size: 200% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shimmer 4s linear infinite;
+  animation: moveGradient 5s alternate infinite;
 }
 
 .gradient-bg {
   background: linear-gradient(40deg,
     #FFFFFF 0%,
-    #FFD66D 33%,
-    #FFFFFF 50%,
-    #FFD66D 67%,
-    #FFFFFF 100%
+    #FFD66D 20%,
+    #FFFFFF 40%,
+    #FFD66D 60%,
+    #FFFFFF 80%,
+    #FFD66D 100%
   );
-  background-size: 200% 100%;
-  animation: shimmer 6s linear infinite;
+  /* Use 300% to ensure we always have enough gradient to show */
+  background-size: 300% 100%;
+  animation: moveGradient 5s alternate infinite;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 @keyframes float {

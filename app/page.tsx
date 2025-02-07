@@ -15,6 +15,7 @@ import CreatorPage from '@/components/CreatorPage';
 import GrowthFeatures from '@/components/GrowthFeatures';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import VideoBackground from '@/components/VideoBackground';
+import ClientScrollGradient from '@/components/clientScrollGradient';
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
 
       {/* Second section with animated background */}
       <div className="relative min-h-screen">
+      <ClientScrollGradient />
         <div className="relative z-10">
           <PageTwoHeader />
           <CreatorPlatformText />
