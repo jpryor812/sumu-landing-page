@@ -1,65 +1,95 @@
 import Image from "next/image";
-import { MessageCircle, HeartIcon, Repeat2 } from "lucide-react"
+import { MessageCircle, HeartIcon, Repeat2 } from "lucide-react";
 
+export default function SocialFeed() {
+  const categories = [
+    { name: "All", active: true },
+    { name: "Art", active: false },
+    { name: "Fashion", active: false },
+    { name: "Finance", active: false },
+    { name: "Gaming", active: false },
+    { name: "Music", active: false },
+    { name: "Tech", active: false },
+    { name: "World Affairs", active: false },
+  ];
 
-export default function SocialFeed (){
-    return (
-        <div className = "gradient-bg border-white border-4 rounded-lg pb-6 px-12">
-            <div className = "flex flex-col">
-                <div className = "flex flex-row gap-6 p-4 align-center justify-center text-sm text-[#001405]">
-                    <p className="font-semibold border-b-2 border-pink-500 text-[#001405]">All</p>
-                    <p>Art</p>
-                    <p>Fashion</p>
-                    <p>Finance</p>
-                    <p>Gaming</p>
-                    <p>Music</p>
-                    <p>Tech</p>
-                    <p>World Affairs</p>
-                </div>
-                <div className = "flex justify-center mx-auto w-10/12 bg-[#001405] border-gray-500 border-2 rounded-2xl p-2">
-                    <div className= "flex flex-col">
-                        <div className = "flex flex-row px-6 gap-2 py-2">
-                            <Image
-                            src="/alex-profile.png"
-                            alt="alex Album Cover"
-                            height={32}
-                            width={32}
-                            />
-                            <div className = "text-sm font-semibold text-gray-200">
-                                <p>Alex Dethero</p>
-                            </div>
-                            <div className = "text-xs text-gray-500">
-                                <p>6:45pm</p>
-                            </div>
-                        </div>
-                        <div className ="text-md font-semibold text-gray-200 px-8 pb-2">
-                            <p>Listened to some classic jazz at work today and I'm feeling creative. Surprise live music making session tonight at 8:00pm est. for all of my fans! Looking forward to chatting with you all and making some hits!!</p>
-                        </div>
-                        <div className ="mx-auto px-6 py-2">
-                        <Image
-                            src="/alex-tweet-image.png"
-                            alt="alex post image"
-                            height={100}
-                            width={400}
-                            />
-                        </div>
-                        <div className = "flex flex-row gap-24 px-24 py-2">
-                        <div className="flex items-center gap-1 text-gray-300">
-                                <MessageCircle size={20} />
-                                <span>9</span>
-                            </div>
-                            <div className="flex items-center gap-1 text-gray-300">
-                                <Repeat2 size={20} />
-                                <span>5</span>
-                            </div>
-                            <div className="flex items-center gap-1 text-gray-300">
-                                <HeartIcon size={20} />
-                                <span>22</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  return (
+    <div className="bg-black border-white border-2 rounded-lg w-full max-w-4xl mx-auto">
+      {/* Categories Section */}
+      <div className="w-full overflow-x-auto">
+        <div className="flex flex-row gap-6 p-4 justify-start md:justify-center min-w-max">
+          {categories.map((category) => (
+            <button
+              key={category.name}
+              className={`text-sm text-gray-300 whitespace-nowrap ${
+                category.active ? "font-semibold border-b-2 border-pink-500" : "hover:text-gray-700"
+              }`}
+            >
+              {category.name}
+            </button>
+          ))}
         </div>
-    );
+      </div>
+
+      {/* Post Container */}
+      <div className="px-4 md:px-8 pb-6">
+        <div className="bg-[#001405] border-gray-500 border-2 rounded-2xl w-full">
+          {/* Post Header */}
+          <div className="flex items-center gap-3 p-4">
+            <Image
+              src="/alex-profile.png"
+              alt="alex Album Cover"
+              height={32}
+              width={32}
+              className="rounded-full"
+            />
+            <div className="flex items-center gap-2 flex-grow">
+              <span className="text-sm font-semibold text-gray-200">
+                Alex Dethero
+              </span>
+              <span className="text-xs text-gray-500">6:45pm</span>
+            </div>
+          </div>
+
+          {/* Post Content */}
+          <div className="px-4 pb-2">
+            <p className="text-md font-semibold text-gray-200">
+              Listened to some classic jazz at work today and I'm feeling creative.
+              Surprise live music making session tonight at 8:00pm est. for all of
+              my fans! Looking forward to chatting with you all and making some
+              hits!!
+            </p>
+          </div>
+
+          {/* Post Image */}
+          <div className="px-6 py-2">
+            <div className="relative w-full aspect-[3/1]">
+              <Image
+                src="/alex-tweet-image.png"
+                alt="alex post image"
+                fill
+                className="object-cover rounded-lg"
+              />
+            </div>
+          </div>
+
+          {/* Engagement Metrics */}
+          <div className="flex justify-center gap-12 md:gap-24 p-4">
+            <button className="flex items-center gap-1 text-gray-300 hover:text-gray-100">
+              <MessageCircle size={20} />
+              <span>9</span>
+            </button>
+            <button className="flex items-center gap-1 text-gray-300 hover:text-gray-100">
+              <Repeat2 size={20} />
+              <span>5</span>
+            </button>
+            <button className="flex items-center gap-1 text-gray-300 hover:text-gray-100">
+              <HeartIcon size={20} />
+              <span>22</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

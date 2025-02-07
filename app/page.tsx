@@ -15,29 +15,26 @@ import CreatorPage from '@/components/CreatorPage';
 import GrowthFeatures from '@/components/GrowthFeatures';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import VideoBackground from '@/components/VideoBackground';
-import ClientScrollGradient from '@/components/clientScrollGradient';
+import MouseFollowingAura from '@/components/MouseFollowingAura';
+import WaveBackground from '@/components/WaveBackground';
+import FloatingBackground from '@/components/FloatingBackground';
+import MainPage from '@/components/MainPage';
 
 export default function Home() {
   return (
     <main className="relative">
-      {/* First section with video background */}
-      <div className="relative min-h-screen">
-        <VideoBackground />
-        
-        {/* Content for first section */}
-        <div className="relative z-10">
-          <Header />
-          <SuumHeader />
-          <HeroText />
-          <SubHeroText />
-          <CTAButton />
-          <SubText />
+      {/* First section with aura background */}
+      <MouseFollowingAura>
+        <div className="min-h-screen">
+          <div className="relative z-10">
+            <MainPage />
+          </div>
         </div>
-      </div>
+      </MouseFollowingAura>
 
-      {/* Second section with animated background */}
-      <div className="relative min-h-screen">
-      <ClientScrollGradient />
+      {/* Second section with scroll gradient */}
+      <FloatingBackground>
+      <div className="min-h-screen">
         <div className="relative z-10">
           <PageTwoHeader />
           <CreatorPlatformText />
@@ -49,6 +46,7 @@ export default function Home() {
           <GrowthFeatures />
         </div>
       </div>
+      </FloatingBackground>
     </main>
   );
 }

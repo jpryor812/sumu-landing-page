@@ -1,6 +1,6 @@
 export default function RecommendationsPage () {
     return(
-        <div className = "gradient-bg border-white border-4 rounded-lg pb-6 px-12">
+        <div className = "gradient-bg border-white border-4 rounded-lg pb-6 px-24">
             <div className = "flex flex-col bg-gray-100 border-r-2 border-l-2">
                 <div className = "text-black text-xl font-semibold text-center">
                     <p>Recommendations</p>
