@@ -6,7 +6,6 @@ import CTAButton from '@/components/CTAButton';
 import SubText from '@/components/SubText';
 import PageTwoHeader from '@/components/PageTwoHeader'
 import FeeChart from '@/components/FeeChart'
-import CreatorPlatformText from '@/components/CreatorPlatformText'
 import LowFeeHighReward from '@/components/LowFeeHighReward';
 import Leaderboard from '@/components/Leaderboard';
 import RewardsExplanation from '@/components/RewardsExplanation';
@@ -19,6 +18,7 @@ import MouseFollowingAura from '@/components/MouseFollowingAura';
 import WaveBackground from '@/components/WaveBackground';
 import FloatingBackground from '@/components/FloatingBackground';
 import MainPage from '@/components/MainPage';
+import StaticAura from '@/components/StaticAura';
 
 export default function Home() {
   return (
@@ -33,11 +33,10 @@ export default function Home() {
       </MouseFollowingAura>
 
       {/* Second section with scroll gradient */}
-      <FloatingBackground>
+      <StaticAura>
       <div className="min-h-screen">
         <div className="relative z-10">
           <PageTwoHeader />
-          <CreatorPlatformText />
           <FeeChart />
           <LowFeeHighReward />
           <Leaderboard />
@@ -46,7 +45,7 @@ export default function Home() {
           <GrowthFeatures />
         </div>
       </div>
-      </FloatingBackground>
+      </StaticAura>
     </main>
   );
 }

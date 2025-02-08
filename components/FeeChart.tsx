@@ -15,7 +15,7 @@ export default function FeeChart() {
     { platform: 'Substack', fee: 14.0, color: '#D1D1D1' },
     { platform: 'Patreon', fee: 12.0, color: '#D1D1D1' },
     { platform: 'Gumroad', fee: 11.0, color: '#D1D1D1' },
-    { platform: 'Suum', fee: 4.9, color: 'url(#suumGradient)' }
+    { platform: 'Suum', fee: 4.9, color: '#00bf63' }
   ];
 
   const renderCustomLabel = (props: any) => {
@@ -39,6 +39,10 @@ export default function FeeChart() {
   }
 
   return (
+    <div>
+    <div className= "pt-12 text-4xl font-semibold text-center text-white lg: px-64 md: px-48 sm: px-32">    
+    <p>It starts with the lowest fees in the creator economy</p>
+    </div>
     <div className="flex flex-row justify-around px-12 ">
         <div className="flex flex-col items-center pl-8 pt-4">
         <div className="flex flex-col py-12">
@@ -98,6 +102,7 @@ export default function FeeChart() {
     ))}
   </Bar>
 </BarChart>
+    </div>
     </div>
     </div>
     </div>
