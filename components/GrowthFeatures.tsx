@@ -4,7 +4,11 @@ import RecommendationComponent from "./RecommendationComponents";
 
 export default function () {
     return (
-        <div className = "flex flex-row p-4 px-24 gap-16">
+        <div className = "flex flex-col pt-12">
+            <div className = "text-center text-5xl font-semibold px-24 text-white">
+                <p>Supported by internal features to help you grow in front of a high-value audience</p>
+            </div>
+            <div className = "flex flex-row p-4 px-24 gap-16">
             <div className="px-6 pt-4 pb-4 rounded-xl bg-gradient-to-b from-[#002308] via-[#003808] to-[#002308] flex flex-col w-1/2">
             <SocialFeed />
             <div className = "text-white text-lg font-semibold mt-4">
@@ -23,6 +27,7 @@ export default function () {
                     <p>Fans can see which creators who creators they're subscribed to recommend. Or, fans who share a premium subscription to a creator can see what other creators that fan follows</p>
                 </div>
             </div>
+         </div>
         </div>
     );
 }

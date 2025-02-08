@@ -29,9 +29,9 @@ export default function Leaderboard() {
             {subs.map((sub) => (
                 <div 
                     key={sub.text} 
-                    className={`px-5 py-2 rounded-3xl ${
+                    className={`px-5 py-2 border-white border-2 rounded-3xl ${
                     sub.isHighlighted 
-                        ? 'bg-blue-500 text-white font-semibold' 
+                        ? 'bg-[#00BF63] text-white font-semibold' 
                         : 'bg-white text-black font-semibold'
                     }`}
                 >
@@ -63,13 +63,10 @@ export default function Leaderboard() {
             </div>
             <div className = "flex flex-col justify-center p-6">
                 <div className = "text-7xl text-white text-center font-semibold">
-                    <p>Earn $100s worth of USDC every month</p>
-                </div>
-                <div className = "text-md text-white text-center font-semibold pt-4">
-                    <p>*USDC is a regulated digital currency you can redeem 1:1 for US dollars. We use USDC, a stablcoin, as it eliminates transaction fees, allowing you to keep all of your deserved earnings.</p>
+                    <p>Earn $100s worth of $SUMU every month</p>
                 </div>
                 <div className = "text-md text-white text-right font-semibold pt-4">
-                    <p>You can learn more about USDC here -- </p>
+                    <p>You can learn more about $SUMU below 👇</p>
                 </div>
             </div>
         </div>

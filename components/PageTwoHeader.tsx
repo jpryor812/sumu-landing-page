@@ -73,7 +73,7 @@ export default function PageTwoHeader() {
                     delay: 1.2,
                     ease: "easeOut"
                 }}
-                className="text-8xl font-semibold text-center text-green pt-16 pb-12">
+                className="text-7xl font-semibold text-center text-green pt-16 pb-12">
                 <h6>How Does It Work? 🤔</h6>
                 
                 {/* Here's the modified Image section */}

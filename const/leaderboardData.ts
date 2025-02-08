@@ -18,7 +18,7 @@ export type LeaderboardEntry = {
       previousSubs: 168,
       currentSubs: 422,
       growth: 151,
-      earnings: 300
+      earnings: 1000
     },
     {
         rank: 2,
@@ -28,7 +28,7 @@ export type LeaderboardEntry = {
         previousSubs: 123,
         currentSubs: 301,
         growth: 145,
-        earnings: 200
+        earnings: 750
       },
       {
         rank: 3,
@@ -38,7 +38,7 @@ export type LeaderboardEntry = {
         previousSubs: 101,
         currentSubs: 263,
         growth: 141,
-        earnings: 150
+        earnings: 500
       },
       {
         rank: 4,
@@ -48,7 +48,7 @@ export type LeaderboardEntry = {
         previousSubs: 201,
         currentSubs: 468,
         growth: 133,
-        earnings: 100
+        earnings: 400
       },
       {
         rank: 5,
@@ -58,6 +58,6 @@ export type LeaderboardEntry = {
         previousSubs: 225,
         currentSubs: 490,
         growth: 118,
-        earnings: 50
+        earnings: 300
       },
   ];

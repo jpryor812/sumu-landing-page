@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import { LeaderboardEntry } from '@/const/leaderboardData';
+import { motion } from 'framer-motion';
+
 
 type Props = {
   entry: LeaderboardEntry;
@@ -39,14 +41,18 @@ export default function LeaderboardRow({ entry }: Props) {
           <p className="text-green-500">+{entry.growth}%</p>
         </div>
 
-        <div className="w-36 flex justify-center text-blue-400 text-center items-center gap-1">
-          <p>{entry.earnings} USDC</p>
-          <Image 
-            src="/USDC_Logo.png"
-            alt="USDC Logo"
-            width={20}
-            height={20}
-          />
+        <div className="w-48 flex justify-between green-text text-center items-center pr-4">
+          <p>{entry.earnings} $SUMU</p>
+                <div className="relative w-[32px] h-[32px] border-2 border-gray-500 rounded-full flex items-center justify-end bg-black">
+                        <Image
+                            src="/Sumu-logo-vert.png"
+                            alt="Sumu Logo"
+                            width={32}
+                            height={32}
+                            className="logo-image absolute" 
+                            >
+                        </Image> 
+                </div>
         </div>
       </div>
     </div>

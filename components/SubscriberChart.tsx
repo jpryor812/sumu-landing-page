@@ -10,16 +10,16 @@ interface DataItem {
   color: string;
 }
 
-export default function FeeChart() {
+export default function SubscriberChart() {
   const [isMounted, setIsMounted] = useState(false);
   const [animatedData, setAnimatedData] = useState<DataItem[]>([]);
   
   const finalData: DataItem[] = [
-    { platform: 'SuperRare', fee: 15.0, color: '#D1D1D1' },
-    { platform: 'Substack', fee: 14.0, color: '#D1D1D1' },
-    { platform: 'Patreon', fee: 12.0, color: '#D1D1D1' },
-    { platform: 'Gumroad', fee: 11.0, color: '#D1D1D1' },
-    { platform: 'Suum', fee: 4.9, color: '#00bf63' }
+    { platform: 'TikTok', fee: 50000, color: '#D1D1D1' },
+    { platform: 'YouTube', fee: 15000, color: '#D1D1D1' },
+    { platform: 'Instagram', fee: 10000, color: '#D1D1D1' },
+    { platform: 'Blog', fee: 10000, color: '#D1D1D1' },
+    { platform: 'Suum', fee: 100, color: '#00bf63' }
   ];
 
   useEffect(() => {
@@ -42,6 +42,7 @@ export default function FeeChart() {
     value: number;
   }) => {
     const { x, y, width, value } = props;
+    const formattedValue = value.toLocaleString();
     return (
       <text 
         x={x + (width/2)}
@@ -49,9 +50,8 @@ export default function FeeChart() {
         fill="white" 
         textAnchor="middle" 
         dy={-10}
-        className="font-semibold text-2xl"
       >
-        {`${value.toFixed(1)}%`}
+        {formattedValue}
       </text>
     );
   };
@@ -59,6 +59,40 @@ export default function FeeChart() {
   if (!isMounted) {
     return null;
   }
+
+  // Add this custom tick renderer function before your return statement
+const CustomXAxisTick = (props: any) => {
+  const { x, y, payload } = props;
+  
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <text 
+        x={0} 
+        y={18} 
+        dy={0} 
+        textAnchor="middle" 
+        fill="white"
+        fontSize="20"
+        fontWeight="600"
+      >
+        {payload.value}
+      </text>
+      {/* Add the subscription text only under "Suum" */}
+      {payload.value === "Suum" && (
+        <text
+          x={0}
+          y={30}
+          textAnchor="middle"
+          fill="white"
+          fontSize="12"
+          fontWeight="400"
+        >
+          ($10/month subscription)
+        </text>
+      )}
+    </g>
+  );
+};
 
   return (
     <div>
@@ -73,7 +107,7 @@ export default function FeeChart() {
         }}
         className="pt-12 text-5xl font-semibold text-center text-white lg:px-64 md:px-48 sm:px-32"
       >
-        <h5>It starts with the lowest fees in the creator economy</h5>
+        <h5>Not Sure Whether to Charge For Your Content? Here's Why You Shouild:</h5>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 60}}
@@ -88,50 +122,39 @@ export default function FeeChart() {
       >
         <div className="flex flex-col items-center pl-8 pt-4">
           <div className="flex flex-col py-12">
-            <div className="lg:text-9xl gradient-text">
-              <p>4.9%</p>
-              <div className="lg:text-6xl text-white">
-                <p>Platform Fees</p>
-              </div>
+            <div className="lg:text-4xl text-white pb-4">
+              <p>Multiply your earnings by</p>
             </div>
-            <div className="flex flex-col py-12">
               <div className="lg:text-9xl gradient-text">
-                <p>0%</p>
-                <div className="lg:text-6xl text-white">
-                  <p>Transaction Fees</p>
+                <p>1,000x</p>
+              </div>  
+                <div className="lg:text-4xl text-white pt-4">
+                <p>Don&apos;t rely on third-party algorithms and advertisers to earn money for your content. 
+                    Instead, connect with your true fans directly and reward them with exclusive content that makes them feel closer to you.</p>
                 </div>
-              </div>
             </div>
           </div>
-        </div>
         <div className="flex items-center justify-center p-8">
           <div className="max-w-3xl flex flex-col rounded-3xl p-4 items-center">
-            <h2 className="text-white text-center mb-4 text-2xl font-semibold">Platform and Transaction Fees</h2>
+            <h2 className="text-white text-center mb-4 text-xl font-semibold">Average Subscribers/Followers needed for $1,000/month from ads</h2>
             <BarChart 
               width={700} 
               height={450} 
               data={animatedData}
-              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+              margin={{ top: 20, right: 30, left: 20, bottom: 15 }}
             >
-              <defs>
-                <linearGradient id="suumGradient" x1="0" y1="1" x2="1" y2="0">
-                  <stop offset="10%" stopColor="#FFEBB7" />
-                  <stop offset="40%" stopColor="#FFD66D" />
-                  <stop offset="60%" stopColor="#FFD66D" />
-                  <stop offset="90%" stopColor="#FFEBB7" />
-                </linearGradient>
-              </defs>
               <CartesianGrid strokeDasharray="3 3" vertical={false} />
               <XAxis 
                 dataKey="platform" 
                 stroke="white" 
                 fontSize="20" 
                 fontWeight="600"
+                tick={CustomXAxisTick}
               />
               <YAxis 
-                tickFormatter={(value) => `${value}%`}
+                tickFormatter={(value) => value.toLocaleString()}
                 stroke="white"
-                domain={[0, 20]}
+                domain={[0, 60000]}
                 fontSize="20"
                 fontWeight="600"
               />
