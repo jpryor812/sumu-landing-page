@@ -2,6 +2,7 @@
 
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Cell, LabelList } from 'recharts';
 import { useState, useEffect } from 'react';
+import { motion} from 'framer-motion';
 
 export default function FeeChart() {
   const [isMounted, setIsMounted] = useState(false);
@@ -40,9 +41,18 @@ export default function FeeChart() {
 
   return (
     <div>
-    <div className= "pt-12 text-4xl font-semibold text-center text-white lg: px-64 md: px-48 sm: px-32">    
-    <p>It starts with the lowest fees in the creator economy</p>
-    </div>
+    <motion.div
+                initial={{ opacity: 0, y: 60}}
+                whileInView={{ opacity: 1, y: 0}}
+                viewport={{ once: true }}
+                transition={{
+                    duration:1.2,
+                    delay:0.5,
+                    ease: "easeOut"
+                }}
+                className="pt-12 text-7xl font-semibold text-center text-white lg: px-64 md: px-48 sm: px-32">
+                <h5>It starts with the lowest fees in the creator economy</h5>
+            </motion.div>
     <div className="flex flex-row justify-around px-12 ">
         <div className="flex flex-col items-center pl-8 pt-4">
         <div className="flex flex-col py-12">

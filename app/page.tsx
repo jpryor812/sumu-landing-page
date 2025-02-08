@@ -37,15 +37,23 @@ export default function Home() {
       <div className="min-h-screen">
         <div className="relative z-10">
           <PageTwoHeader />
+          </div>
+      </div>
+      </StaticAura>
+
+      <StaticAura>
+      <div className="min-h-screen fee-chart-section"> 
+      <div className="relative z-10">
           <FeeChart />
           <LowFeeHighReward />
           <Leaderboard />
           <RewardsExplanation />
           <ChargeForContent />
           <GrowthFeatures />
-        </div>
+          </div>
       </div>
       </StaticAura>
+
     </main>
   );
 }
