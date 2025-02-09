@@ -71,7 +71,7 @@ export default function FeeChart() {
           delay: 0.5,
           ease: "easeOut"
         }}
-        className="pt-12 text-5xl font-semibold text-center text-white lg:px-64 md:px-48 sm:px-32"
+        className="pt-16 text-5xl font-semibold text-center text-white lg:px-64 md:px-48 sm:px-32"
       >
         <h5>It starts with the lowest fees in the creator economy</h5>
       </motion.div>

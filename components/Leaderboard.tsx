@@ -22,6 +22,10 @@ export default function Leaderboard() {
       ];
     
     return(
+      <div className ="flex flex-col">
+      <div className="text-3xl mx-auto sm:text-4xl md:text-5xl lg:text-5xl text-white font-semibold text-center pt-32 px-32">
+      <h1>Plus a rewards system that gives back to the fastest-growing creators.</h1>
+      </div>
       <div className = "border-white rounded-2xl py-8 px-12">
         <div className = "flex flex-row justify-around">
             <div className = "flex flex-col border-4 border-white pb-4 rounded-2xl px-6">
@@ -62,7 +66,7 @@ export default function Leaderboard() {
             </div>
             </div>
             <div className = "flex flex-col justify-center p-6">
-                <div className = "text-7xl text-white text-center font-semibold">
+                <div className = "text-6xl text-white text-center font-semibold">
                     <p>Earn $100s worth of $SUMU every month</p>
                 </div>
                 <div className = "text-md text-white text-right font-semibold pt-4">
@@ -70,7 +74,7 @@ export default function Leaderboard() {
                 </div>
             </div>
         </div>
-
+        </div>
       </div>  
     );
 }

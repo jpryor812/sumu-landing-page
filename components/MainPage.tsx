@@ -39,7 +39,7 @@ export default function MainPage() {
                 </div>
             </div>
             <div className = "text-md text-white text-center pb-1 sm: px-24 md:px-48 lg:px-64">
-                <p>Sign up to lock-in your industry-low 4.9% platfrom fee and be the first to receive $SUMU</p>
+                <p>Sign up to lock-in your industry-low 4.9% platform fee and be the first to receive $SUMU</p>
             </div>
             <div className = "text-md text-white text-center pb-8 sm: px-24 md:px-48 lg:px-64">
                 <p>More information below 👇</p>

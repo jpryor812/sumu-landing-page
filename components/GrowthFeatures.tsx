@@ -4,7 +4,7 @@ import RecommendationComponent from "./RecommendationComponents";
 
 export default function () {
     return (
-        <div className = "flex flex-col pt-12">
+        <div className = "flex flex-col pt-48">
             <div className = "text-center text-5xl font-semibold px-24 text-white">
                 <p>Supported by internal features to help you grow in front of a high-value audience</p>
             </div>

@@ -23,7 +23,7 @@ const RecommendationCard: FC<RecommendationCardProps> = ({
     <div className= "py-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <img src={creatorImage} alt={creator} className="w-12 h-12 rounded-full" />
+          <img src={creatorImage} alt={creator} className="w-11 h-11 rounded-full" />
           <div>
             <h3 className="font-semibold text-gray-800 text-md">{creator}</h3>
             <p className="text-gray-600 text-sm px-4">{description}</p>
@@ -80,8 +80,8 @@ const RecommendationComponent: FC = () => {
   ];
 
   return (
-    <div className = "bg-white rounded-xl p-1">
-    <div className="max-w-3xl mx-auto p-6">
+    <div className = "bg-white border-4 border-gray rounded-xl p-1">
+    <div className="max-w-3xl mx-auto pt-2 px-6">
       <h2 className="text-center text-xl text-gray-800 font-bold mb-6">Recommendations</h2>
       <div className="flex align-center justify-center gap-4 pb-2 border-b">
         <button className="px-4 py-2 rounded-full bg-[#4040FF] text-sm text-white font-semibold">

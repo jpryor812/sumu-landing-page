@@ -9,6 +9,8 @@ import MainPage from '@/components/MainPage';
 import StaticAura from '@/components/StaticAura';
 import SubscriberChart from '@/components/SubscriberChart';
 import ContentIdeasTicker from '@/components/ContentIdeasTicker';
+import FinalCTA from '@/components/FinalCTA';
+import CurvedDivider from '@/components/CurvedDivider';
 
 export default function Home() {
   return (
@@ -35,12 +37,12 @@ export default function Home() {
       <div className="min-h-screen fee-chart-section"> 
       <div className="relative z-10">
           <FeeChart />
-          <LowFeeHighReward />
           <Leaderboard />
           <RewardsExplanation />
           <GrowthFeatures />
           <SubscriberChart />
           <ContentIdeasTicker />
+          <FinalCTA />
       </div>
       </div>
       </StaticAura>

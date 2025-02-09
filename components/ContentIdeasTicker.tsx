@@ -5,19 +5,19 @@ import { motion } from 'framer-motion';
 
 const ContentIdeasTicker: React.FC = () => {
   const items = [
-    "Create exclusive content",
-    "Build your community",
-    "Monetize your passion",
-    "Connect with true fans",
-    "Grow your audience"
+    "Investment Tips",
+    "Art Raffles",
+    "Early Access to Future Public Content",
+    "Discounts",
+    "Exclusive Group Chats"
   ];
 
   const itemsReverse = [
-    "Share your expertise",
-    "Engage with followers",
-    "Create your brand",
-    "Build loyalty",
-    "Scale your impact"
+    "Fan-Only Vlogs",
+    "Q&A's about your Work",
+    "Sell a Course",
+    "Host Fan Meet-Ups",
+    "Live Performances"
   ];
 
   return (
@@ -31,7 +31,7 @@ const ContentIdeasTicker: React.FC = () => {
           }}
           transition={{
             x: {
-              duration: 20,
+              duration: 30,
               repeat: Infinity,
               ease: "linear",
             },
@@ -55,7 +55,7 @@ const ContentIdeasTicker: React.FC = () => {
           }}
           transition={{
             x: {
-              duration: 20,
+              duration: 30,
               repeat: Infinity,
               ease: "linear",
             },
