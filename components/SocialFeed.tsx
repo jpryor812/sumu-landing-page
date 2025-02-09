@@ -3,10 +3,13 @@
 import Image from "next/image";
 import { MessageCircle, HeartIcon, Repeat2 } from "lucide-react";
 import { motion, useAnimationControls } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function SocialFeed() {
   const controls = useAnimationControls();
+  const [isInView, setIsInView] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const componentRef = useRef(null);
   
   const categories = [
     { name: "All", active: true },
@@ -20,39 +23,68 @@ export default function SocialFeed() {
   ];
 
   useEffect(() => {
-    const startAnimation = async () => {
-      while (true) {
-        // Start at top
-        await controls.start({ y: 0 });
-        await new Promise(resolve => setTimeout(resolve, 3000));
-        
-        // Scroll to second post
-        await controls.start({ 
-          y: "-33.33%", 
-          transition: { duration: 1.5, ease: "easeInOut" }
-        });
-        await new Promise(resolve => setTimeout(resolve, 0));
-        
-        // Scroll to third post
-        await controls.start({ 
-          y: "-60.00%", 
-          transition: { duration: 1.5, ease: "easeInOut" }
-        });
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        
-        // Scroll back to top
-        await controls.start({ 
-          y: 0, 
-          transition: { duration: 2, ease: "easeInOut" }
-        });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isInView) {
+          setIsInView(true);
+        }
+      },
+      {
+        threshold: 0.3
+      }
+    );
+
+    if (componentRef.current) {
+      observer.observe(componentRef.current);
+    }
+
+    return () => {
+      if (componentRef.current) {
+        observer.unobserve(componentRef.current);
       }
     };
+  }, [isInView]);
 
-    startAnimation();
-  }, [controls]);
+  // Animation sequence
+  useEffect(() => {
+    const startAnimation = async () => {
+      if (hasAnimated) return; // Don't animate if we've already done it
+      
+      setHasAnimated(true);
+      
+      // Start at top
+      await controls.start({ y: 0 });
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      
+      // Scroll to second post
+      await controls.start({ 
+        y: "-33.33%", 
+        transition: { duration: 1.5, ease: "easeInOut" }
+      });
+      await new Promise(resolve => setTimeout(resolve, 0));
+      
+      // Scroll to third post
+      await controls.start({ 
+        y: "-60.00%", 
+        transition: { duration: 1.5, ease: "easeInOut" }
+      });
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Scroll back to top
+      await controls.start({ 
+        y: 0, 
+        transition: { duration: 2, ease: "easeInOut" }
+      });
+    };
+
+    // Only start animation when component is in view
+    if (isInView) {
+      startAnimation();
+    }
+  }, [controls, isInView, hasAnimated]);
 
   return (
-    <div className="bg-black border-white border-2 rounded-lg w-full max-w-4xl mx-auto overflow-hidden">
+    <div ref={componentRef} className="bg-black border-white border-2 rounded-lg w-full max-w-4xl mx-auto overflow-hidden">
       {/* Categories Section */}
       <div className="w-full overflow-x-auto">
         <div className="flex flex-row gap-6 p-4 justify-start md:justify-center min-w-max">
