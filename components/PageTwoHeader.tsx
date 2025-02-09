@@ -21,7 +21,7 @@ export default function PageTwoHeader() {
                 
                 // Perform rotation animation
                 await animate(".logo-image", 
-                    { rotate: 1080 }, // Two full rotations (360 * 2)
+                    { rotate: 720 }, // Two full rotations (360 * 2)
                     { 
                         duration: 1,
                         ease: "easeOut"

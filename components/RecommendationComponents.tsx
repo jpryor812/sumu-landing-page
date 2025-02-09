@@ -9,6 +9,7 @@ interface RecommendationData {
   description: string;
   recCreator1: string;
   recCreator2?: string;
+  recCreator3?: string;
   recommendation: string;
 }
 
@@ -20,6 +21,7 @@ const RecommendationCard: FC<RecommendationCardProps> = ({
   description,
   recCreator1,
   recCreator2,
+  recCreator3,
   recommendation,
 }) => {
   return (
@@ -44,6 +46,13 @@ const RecommendationCard: FC<RecommendationCardProps> = ({
           {recCreator2 && (
             <img 
               src={recCreator2} 
+              alt="Recommender 2" 
+              className="w-8 h-8 rounded-full border-2 border-white" 
+            />
+          )}
+             {recCreator3 && (
+            <img 
+              src={recCreator3} 
               alt="Recommender 2" 
               className="w-8 h-8 rounded-full border-2 border-white" 
             />
@@ -91,27 +100,29 @@ const RecommendationComponent: FC = () => {
 
   const mutualFansData: RecommendationData[] = [
     {
-      creator: 'Digital Nomad Daily',
-      creatorImage: '/api/placeholder/500/500',
-      description: "Sharing insights about remote work and digital entrepreneurship",
-      recCreator1: '/api/placeholder/500/500',
-      recCreator2: '/api/placeholder/500/500',
-      recommendation: 'In network with Tech Wanderer and Remote Life'
+      creator: 'Just-in Trades',
+      creatorImage: '/profile_picture.jpg',
+      description: "Sharing tips on how to profitably invest in crypto",
+      recCreator1: '/photo-1.jpeg',
+      recCreator2: '/photo-2.jpeg',
+      recCreator3: '/photo-3.jpeg',
+      recommendation: 'Recommended by Fans of Alex Dethero'
     },
     {
-      creator: 'Crypto Chronicles',
-      creatorImage: '/api/placeholder/500/500',
-      description: "Daily updates and analysis of the cryptocurrency market",
-      recCreator1: '/api/placeholder/500/500',
-      recommendation: 'In network with Blockchain Weekly'
+      creator: 'Alex Dethero',
+      creatorImage: 'alex-profile.png',
+      description: "Lo-fi hip-hop beat musician",
+      recCreator1: '/photo-4.jpeg',
+      recCreator2: '/photo-5.jpg',
+      recommendation: 'Recommended by Fans of Just-in Trades'
     },
     {
-      creator: 'Art of Teaching',
-      creatorImage: '/api/placeholder/500/500',
-      description: "Resources and community for innovative educators",
-      recCreator1: '/api/placeholder/500/500',
-      recCreator2: '/api/placeholder/500/500',
-      recommendation: 'In network with EduTech Pro and Learning Lab'
+      creator: 'Coding with Courtney',
+      creatorImage: '/photo-8.jpg',
+      description: "Group and private coding lessons",
+      recCreator1: '/photo-7.jpg',
+      recCreator2: '/photo-6.jpg',
+      recommendation: 'Recommneded by Fans of Techno-Tony'
     },
   ];
 
@@ -143,7 +154,7 @@ const RecommendationComponent: FC = () => {
     if (showCursor && isInView) {
       // Move to Mutual Fans
       const moveToMutual = setTimeout(() => {
-        setCursorPosition({ x: 300, y: 100 });
+        setCursorPosition({ x: 320, y: 90 });
         setTimeout(() => {
           setClicked(true);
           setTimeout(() => {
@@ -153,7 +164,7 @@ const RecommendationComponent: FC = () => {
             // Wait for 3 seconds on Mutual Fans view
             setTimeout(() => {
               // Move back to Creators You Follow
-              setCursorPosition({ x: 100, y: 100 });
+              setCursorPosition({ x: 120, y: 90 });
               setTimeout(() => {
                 setClicked(true);
                 setTimeout(() => {
@@ -183,7 +194,7 @@ const RecommendationComponent: FC = () => {
         >
           <MousePointer2
             size={32}
-            className={`text-blue-600 ${clicked ? 'scale-90' : 'scale-100'} transition-transform`}
+            className={`text-black ${clicked ? 'scale-90' : 'scale-100'} transition-transform`}
           />
         </div>
       )}

@@ -43,22 +43,6 @@ export default function Leaderboard() {
                 </div>
                 ))}
             </div>
-            {/*
-            <div className = "flex flex-row justify-around p-4 gap-4">
-              {categories.map((category) => (
-                <div 
-                key={category.text} 
-                className={`px-5 py-2 rounded-3xl ${
-                category.isHighlighted 
-                    ? 'bg-blue-500 text-white font-semibold' 
-                    : 'bg-white text-black font-semibold'
-                }`}
-            >
-                <p>{category.text}</p>
-                </div>
-              ))}
-            </div>
-            */}
             <div className="space-y-3">
       {leaderboardData.map((entry) => (
         <LeaderboardRow key={entry.rank} entry={entry} />

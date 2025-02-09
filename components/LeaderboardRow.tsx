@@ -25,11 +25,11 @@ export default function LeaderboardRow({ entry }: Props) {
           />
         </div>
 
-        <div className="w-24 text-center">
+        <div className="w-24 text-sm text-center">
           <p>{entry.username}</p>
         </div>
 
-        <div className="w-24 text-center">
+        <div className="w-24 text-md text-center">
           <p>{entry.previousSubs} subs</p>
         </div>
 
