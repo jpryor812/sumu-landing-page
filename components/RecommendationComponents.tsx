@@ -172,7 +172,7 @@ const RecommendationComponent: FC = () => {
                   setShowCursor(false);
                 }, 500);
               }, 1000);
-            }, 3000);
+            }, 4000);
           }, 500);
         }, 1000);
       }, 1000);
