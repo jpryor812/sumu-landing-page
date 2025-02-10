@@ -60,7 +60,7 @@ export function WaitlistButton({ className = "" }) {
     <>
       <button 
         onClick={openModal}
-        className={className}
+        className={`inline-block w-full px-4 py-2 ${className}`}
       >
         Join The Waitlist
       </button>

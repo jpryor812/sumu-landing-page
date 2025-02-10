@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import CTAButton from './CTAButton';
 import QuestionButton from './QuestionButton';
+import { WaitlistButton } from './WaitlistButton';
 
 export default function FinalCTA (){
     return(
@@ -8,7 +8,7 @@ export default function FinalCTA (){
             <div className = "pt-24 text-3xl text-white text-center px-24">
                 <p>Lock in Your Spot on the Lowest-Fee Highest-Reward Creator Platform and Earn More Alongside Incredible Creators</p>
             </div>
-            <div className= "pt-4 pb-2 flex flex-row gap-12">
+            <div className= "pt-4 pb-2 flex flex-row justify-center items-center gap-12">
             <div className="relative w-[220px] h-[220px] mx-auto border-4 border-gray-500 rounded-full flex items-center justify-center">
                 <div className="relative w-[210px] h-[210px] mx-auto border-2 border-black rounded-full flex items-center justify-center bg-black">
                         <Image
@@ -20,10 +20,8 @@ export default function FinalCTA (){
                         />
                     </div>
                 </div>
-                <div className="flex items-center justify-center"> {/* Added wrapper div */}
-                    <div className = "">
-                    <CTAButton />
-                    </div>
+                <div className="flex items-center justify-center bg-[#4040FF] text-white font-semibold py-4 px-2 text-center text-3xl rounded-3xl mx-auto"> {/* Added wrapper div */}
+                    <WaitlistButton />
                 </div>
                 <div className="relative w-[220px] h-[220px] mx-auto border-4 border-gray-500 rounded-full flex items-center justify-center">
                 <div className="relative w-[210px] h-[210px] mx-auto border-2 border-black rounded-full flex items-center justify-center bg-black">
