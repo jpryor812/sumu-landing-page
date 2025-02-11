@@ -9,9 +9,9 @@ type Props = {
 
 export default function LeaderboardRow({ entry }: Props) {
   return (
-    <div className="bg-white rounded-xl px-2 w-11/12 mx-auto"> 
-      <div className="flex flex-row py-2 gap-6 text-black text-lg font-semibold items-center justify-around">
-      <div className="w-12 text-center">
+    <div className="bg-white rounded-xl px-2 w-full mx-auto"> 
+      <div className="flex flex-row py-2 gap-4 md:gap-6 text-black text-lg font-semibold items-center">
+        <div className="min-w-[40px] text-center">
           <p className={entry.rankColor}>#{entry.rank}</p>
         </div>
 
@@ -43,16 +43,15 @@ export default function LeaderboardRow({ entry }: Props) {
 
         <div className="w-48 flex justify-between green-text text-center items-center pr-4">
           <p>{entry.earnings} $SUMU</p>
-                <div className="relative w-[32px] h-[32px] border-2 border-gray-500 rounded-full flex items-center justify-end bg-black">
-                        <Image
-                            src="/Sumu-logo-vert.png"
-                            alt="Sumu Logo"
-                            width={32}
-                            height={32}
-                            className="logo-image absolute" 
-                            >
-                        </Image> 
-                </div>
+          <div className="relative w-[32px] h-[32px] border-2 border-gray-500 rounded-full flex items-center justify-end bg-black">
+            <Image
+              src="/Sumu-logo-vert.png"
+              alt="Sumu Logo"
+              width={32}
+              height={32}
+              className="logo-image absolute"
+            />
+          </div>
         </div>
       </div>
     </div>

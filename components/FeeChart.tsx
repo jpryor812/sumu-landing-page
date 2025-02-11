@@ -35,6 +35,32 @@ export default function FeeChart() {
     }, 100);
   }, []);
 
+  const getChartDimensions = () => {
+    if (typeof window !== 'undefined') {
+      const width = window.innerWidth;
+      if (width < 640) { // mobile
+        return { width: 320, height: 300, barSize: 30 };
+      } else if (width < 1024) { // tablet
+        return { width: 500, height: 400, barSize: 45 };
+      } else { // desktop
+        return { width: 700, height: 450, barSize: 60 };
+      }
+    }
+    return { width: 700, height: 450, barSize: 60 }; // default
+  };
+
+  const [dimensions, setDimensions] = useState(getChartDimensions());
+
+  useEffect(() => {
+    const handleResize = () => {
+      setDimensions(getChartDimensions());
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Modify the renderCustomLabel to be responsive
   const renderCustomLabel = (props: {
     x: number;
     y: number;
@@ -49,16 +75,12 @@ export default function FeeChart() {
         fill="white" 
         textAnchor="middle" 
         dy={-10}
-        className="font-semibold text-2xl"
+        className="font-semibold text-sm sm:text-xl lg:text-2xl" // Responsive text size
       >
         {`${value.toFixed(1)}%`}
       </text>
     );
   };
-
-  if (!isMounted) {
-    return null;
-  }
 
   return (
     <div>
@@ -71,7 +93,7 @@ export default function FeeChart() {
           delay: 0.5,
           ease: "easeOut"
         }}
-        className="pt-16 text-5xl font-semibold text-center text-white lg:px-64 md:px-48 sm:px-32"
+        className="sm:pt-16 pt-2 text-2xl sm:text-3xl lg:text-5xl font-semibold text-center text-white lg:px-64 md:px-48 sm:px-32 px-4" // Added mobile padding
       >
         <h5>It starts with the lowest fees in the creator economy</h5>
       </motion.div>
@@ -84,60 +106,56 @@ export default function FeeChart() {
           delay: 0.5,
           ease: "easeOut"
         }}
-        className="flex flex-row justify-around px-12"
+        className="flex flex-col lg:flex-row justify-around px-4 sm:px-8 lg:px-12" // Changed to column on mobile
       >
-        <div className="flex flex-col items-center pl-8 pt-4">
-          <div className="flex flex-col py-12">
-            <div className="lg:text-9xl gradient-text">
+        <div className="flex flex-col items-center lg:pl-8 pt-4">
+          <div className="flex flex-col py-4 sm:py-12">
+            <div className="text-5xl sm:text-7xl lg:text-9xl gradient-text">
               <p>4.9%</p>
-              <div className="lg:text-6xl text-white">
+              <div className="text-3xl sm:text-4xl lg:text-6xl text-white">
                 <p>Platform Fees</p>
               </div>
             </div>
-            <div className="flex flex-col py-12">
-              <div className="lg:text-9xl gradient-text">
+            <div className="flex flex-col py-6 sm:py-12">
+              <div className="text-5xl sm:text-7xl lg:text-9xl gradient-text">
                 <p>0%</p>
-                <div className="lg:text-6xl text-white">
+                <div className="text-3xl sm:text-4xl lg:text-6xl text-white">
                   <p>Transaction Fees</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-center p-8">
-          <div className="max-w-3xl flex flex-col rounded-3xl p-4 items-center">
-            <h2 className="text-white text-center mb-4 text-2xl font-semibold">Platform and Transaction Fees</h2>
+        <div className="flex items-center justify-center p-4 sm:p-8">
+          <div className="w-full max-w-3xl flex flex-col rounded-3xl p-2 sm:p-4 items-center">
+            <h2 className="text-white text-center mb-4 text-lg sm:text-xl lg:text-2xl font-semibold">Platform and Transaction Fees</h2>
             <BarChart 
-              width={700} 
-              height={450} 
+              width={dimensions.width} 
+              height={dimensions.height} 
               data={animatedData}
-              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+              margin={{ top: 20, right: 20, left: 10, bottom: 5 }}
             >
-              <defs>
-                <linearGradient id="suumGradient" x1="0" y1="1" x2="1" y2="0">
-                  <stop offset="10%" stopColor="#FFEBB7" />
-                  <stop offset="40%" stopColor="#FFD66D" />
-                  <stop offset="60%" stopColor="#FFD66D" />
-                  <stop offset="90%" stopColor="#FFEBB7" />
-                </linearGradient>
-              </defs>
+              {/* ... defs remain the same ... */}
               <CartesianGrid strokeDasharray="3 3" vertical={false} />
               <XAxis 
                 dataKey="platform" 
                 stroke="white" 
-                fontSize="20" 
+                fontSize={dimensions.width < 640 ? 12 : 20} 
                 fontWeight="600"
+                angle={dimensions.width < 640 ? -45 : 0}
+                textAnchor={dimensions.width < 640 ? "end" : "middle"}
+                height={dimensions.width < 640 ? 60 : 30}
               />
               <YAxis 
                 tickFormatter={(value) => `${value}%`}
                 stroke="white"
                 domain={[0, 20]}
-                fontSize="20"
+                fontSize={dimensions.width < 640 ? 12 : 20}
                 fontWeight="600"
               />
               <Bar 
                 dataKey="fee" 
-                barSize={60}
+                barSize={dimensions.barSize}
                 fill="#6B7280"
                 stroke=""
                 radius={[10, 10, 0, 0]}
@@ -153,7 +171,7 @@ export default function FeeChart() {
               </Bar>
             </BarChart>
           </div>
-      </div>
+        </div>
       </motion.div>
     </div>
   );
