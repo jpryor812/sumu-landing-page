@@ -30,7 +30,7 @@ export default function Leaderboard() {
             {/* Change to column on smaller screens */}
             <div className="flex flex-col custom:flex-row justify-around items-center gap-2">
               {/* Add scaling container for the chart */}
-              <div className="transform scale-[0.45] sm:scale-70 md:scale-85 lg:scale-100 origin-top -mb-48 lg:mb-2">
+              <div className="transform scale-[0.50] sm:scale-75 md:scale-90 lg:scale-100 origin-top -mb-48 sm:-mb-24 md:mb-2">
                 <div className="flex flex-col border-4 border-white pb-4 rounded-2xl px-6">
                   <div className="flex flex-row justify-around pt-4 pb-8 gap-2">
                     {subs.map((sub) => (
@@ -58,7 +58,7 @@ export default function Leaderboard() {
                 <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white text-center font-semibold">
                   <p>Earn $100s worth of $SUMU every month</p>
                 </div>
-                <div className="text-md text-white text-right font-semibold pt-4">
+                <div className="text-md text-white text-right font-semibold sm:pt-4 pb-4">
                   <p>You can learn more about $SUMU below 👇</p>
                 </div>
               </div>

@@ -93,7 +93,7 @@ export default function FeeChart() {
           delay: 0.5,
           ease: "easeOut"
         }}
-        className="sm:pt-16 pt-2 text-2xl sm:text-3xl lg:text-5xl font-semibold text-center text-white lg:px-64 md:px-48 sm:px-32 px-4" // Added mobile padding
+        className="sm:pt-16 pt-2 text-3xl sm:text-3xl lg:text-5xl font-semibold text-center text-white lg:px-64 md:px-48 sm:px-32 px-4" // Added mobile padding
       >
         <h5>It starts with the lowest fees in the creator economy</h5>
       </motion.div>

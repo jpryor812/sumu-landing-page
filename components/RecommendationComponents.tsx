@@ -30,12 +30,12 @@ const RecommendationCard: FC<RecommendationCardProps> = ({
         <div className="flex items-center gap-4">
           <img src={creatorImage} alt={creator} className="w-11 h-11 rounded-full" />
           <div>
-            <h3 className="font-semibold text-gray-800 text-md">{creator}</h3>
-            <p className="text-gray-600 text-sm px-4">{description}</p>
+            <h3 className="font-semibold text-gray-800 text-sm sm:text-md">{creator}</h3>
+            <p className="text-gray-600 text-xs sm:text-sm lg:px-4">{description}</p>
           </div>
         </div>
         <div className="ml-4 flex items-start">
-          <button className="w-24 px-3 py-2 rounded-full bg-blue-600 text-sm font-semibold text-gray-100 hover:bg-blue-700 transition-colors">
+          <button className="w-24 px-3 py-2 rounded-full bg-blue-600 text-xs sm:text-sm font-semibold text-gray-100 hover:bg-blue-700 transition-colors">
             View Page
           </button>
         </div>
@@ -58,7 +58,7 @@ const RecommendationCard: FC<RecommendationCardProps> = ({
             />
           )}
         </div>
-        <p className="text-sm text-gray-800 font-semibold">{recommendation}</p>
+        <p className="text-xs sm:text-sm text-gray-800 font-semibold">{recommendation}</p>
       </div>
     </div>
   );
@@ -152,34 +152,52 @@ const RecommendationComponent: FC = () => {
 
   useEffect(() => {
     if (showCursor && isInView) {
-      // Move to Mutual Fans
-      const moveToMutual = setTimeout(() => {
+      const runAnimationCycle = async () => {
+        // Move to Mutual Fans
+        await new Promise(resolve => setTimeout(resolve, 1000));
         setCursorPosition({ x: 320, y: 90 });
-        setTimeout(() => {
-          setClicked(true);
-          setTimeout(() => {
-            setActiveTab('mutual');
-            setClicked(false);
-            
-            // Wait for 3 seconds on Mutual Fans view
-            setTimeout(() => {
-              // Move back to Creators You Follow
-              setCursorPosition({ x: 120, y: 90 });
-              setTimeout(() => {
-                setClicked(true);
-                setTimeout(() => {
-                  setActiveTab('following');
-                  setShowCursor(false);
-                }, 500);
-              }, 1000);
-            }, 4000);
-          }, 500);
-        }, 1000);
-      }, 1000);
+        
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        setClicked(true);
+        
+        await new Promise(resolve => setTimeout(resolve, 500));
+        setActiveTab('mutual');
+        setClicked(false);
+        
+        // Wait on Mutual Fans view
+        await new Promise(resolve => setTimeout(resolve, 4000));
+        
+        // Move back to Creators You Follow
+        setCursorPosition({ x: 120, y: 90 });
+        
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        setClicked(true);
+        
+        await new Promise(resolve => setTimeout(resolve, 500));
+        setActiveTab('following');
+        setClicked(false);
+
+        // Pause between cycles
+        await new Promise(resolve => setTimeout(resolve, 1000));
+      };
+
+      // Function to run both cycles
+      const runFullAnimation = async () => {
+        await runAnimationCycle();
+        await runAnimationCycle();
+        setShowCursor(false); // Hide cursor after both cycles are complete
+      };
+
+      runFullAnimation();
       
-      return () => clearTimeout(moveToMutual);
+      // Cleanup function
+      return () => {
+        setShowCursor(false);
+        setClicked(false);
+        setActiveTab('following');
+      };
     }
-  }, [showCursor]);
+  }, [showCursor, isInView]);
 
   const currentData = activeTab === 'following' ? followingData : mutualFansData;
 
@@ -199,7 +217,7 @@ const RecommendationComponent: FC = () => {
         </div>
       )}
       <div className="max-w-3xl mx-auto pt-2 px-6">
-        <h2 className="text-center text-xl text-gray-800 font-bold mb-6">Recommendations</h2>
+        <h2 className="text-center text-lg sm:text-xl text-gray-800 font-bold mb-6">Recommendations</h2>
         <div className="flex align-center justify-center gap-4 pb-2 border-b">
           <button 
             className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
