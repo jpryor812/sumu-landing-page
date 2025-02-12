@@ -70,7 +70,7 @@ const RecommendationComponent: FC = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 50, y: 50 });
   const [clicked, setClicked] = useState(false);
   const [isInView, setIsInView] = useState(false);
-  const componentRef = React.useRef(null);
+  const componentRef = useRef<HTMLDivElement | null>(null);
   const followingButtonRef = useRef<HTMLButtonElement>(null);
   const mutualButtonRef = useRef<HTMLButtonElement>(null);
 
