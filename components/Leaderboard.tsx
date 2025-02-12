@@ -49,7 +49,7 @@ export default function Leaderboard() {
                 <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white text-center font-semibold">
                   <p>Earn $100s worth of $SUMU or USDC every month</p>
                 </div>
-                <div className="text-md text-white text-right font-semibold sm:pt-4 pb-4">
+                <div className="text-sm sm:text-md text-white text-right font-semibold sm:pt-4 pb-6">
                 <p>$SUMU represents ownership in Sumu the company, thereby making creators on Sumu, owners of Sumu. You can learn more about $SUMU{' '}
                 <Link href="/SumuExplained" className="underline hover:text-gray-300">
                   here
