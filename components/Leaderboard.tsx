@@ -2,16 +2,6 @@ import { leaderboardData } from '@/const/leaderboardData';
 import LeaderboardRow from './LeaderboardRow';
 
 export default function Leaderboard() {
-    
-    const categories = [
-        { text: 'Tech', isHighlighted: false },
-        { text: 'Finance', isHighlighted: false },
-        { text: 'Art', isHighlighted: true },  // This one will be blue
-        { text: 'Music', isHighlighted: false },
-        { text: 'Gaming', isHighlighted: false },
-        { text: 'Fashion', isHighlighted: false },
-        { text: 'Politics', isHighlighted: false },
-      ];
 
       const subs = [
         { text: '<50 fans', isHighlighted: false },

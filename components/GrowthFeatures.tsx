@@ -23,7 +23,7 @@ export default function () {
                     <p>Get Recommended by Other Fans and Creators</p>
                 </div>
                 <div className = "text-white text-sm">
-                    <p>Fans can see which creators who creators they're subscribed to recommend. Or, fans who share a premium subscription to a creator can see what other creators that fan follows</p>
+                    <p>Fans can see which creators who creators they&apos;re subscribed to recommend. Or, fans who share a premium subscription to a creator can see what other creators that fan follows</p>
                 </div>
             </div>
          </div>

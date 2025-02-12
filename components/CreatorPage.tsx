@@ -27,7 +27,7 @@ export default function CreatorPage() {
                     <div className = "w-2/3 gradient-bg">
                         <div className = "flex flex-col">
                             <div className = "text-white text-sm font-semibold py-2 px-8">
-                                <p>Hi! My name is Alex and I make lo-fi hip hop beats. I started it as a hobby in 2020, and it turned into a passion. I've made hundreds of songs, released six albums, and have even performed live a few times. I would love to connect with you all on a deeper level through my Suum account, and appreciate all of your support!!</p>
+                                <p>Hi! My name is Alex and I make lo-fi hip hop beats. I started it as a hobby in 2020, and it turned into a passion. I&apos;ve made hundreds of songs, released six albums, and have even performed live a few times. I would love to connect with you all on a deeper level through my Suum account, and appreciate all of your support!!</p>
                             </div>
                             <div className = "text-white text-xl font-semibold text-center pb-1">
                                 <p>Choose Your Membership</p>

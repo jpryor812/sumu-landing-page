@@ -22,7 +22,7 @@ export default function CreatorPriceCardTwo() {
                     <p>Get Access to:</p>
                     <ol className="list-decimal text-xs font-semibold pl-5">
                         <li>Early Music Drops</li>
-                        <li>Bi-weekly live recording sessions with Q&A and requests while I'm making a song</li>
+                        <li>Bi-weekly live recording sessions with Q&A and requests while I&apos;m making a song</li>
                         <li>Access to a private group chat with me and all the other super fans to chat about music</li>
                     </ol>
                 </div>

@@ -1,7 +1,5 @@
 import Image from 'next/image';
 import { LeaderboardEntry } from '@/const/leaderboardData';
-import { motion } from 'framer-motion';
-
 
 type Props = {
   entry: LeaderboardEntry;
