@@ -107,7 +107,7 @@ const CustomXAxisTick = (props: any) => {
         }}
         className="pt-32 text-3xl md:text-5xl font-semibold text-center text-white px-8 lg:px-64 md:px-48 sm:px-32"
       >
-        <h5>Not Sure Whether to Charge For Your Content? Here's Why You Shouild:</h5>
+        <h5>Not Sure Whether to Charge For Your Content? Here&apos;s Why You Shouild:</h5>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 60}}

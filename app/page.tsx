@@ -1,6 +1,5 @@
 import PageTwoHeader from '@/components/PageTwoHeader'
 import FeeChart from '@/components/FeeChart'
-import LowFeeHighReward from '@/components/LowFeeHighReward';
 import Leaderboard from '@/components/Leaderboard';
 import RewardsExplanation from '@/components/RewardsExplanation';
 import GrowthFeatures from '@/components/GrowthFeatures';
@@ -10,7 +9,6 @@ import StaticAura from '@/components/StaticAura';
 import SubscriberChart from '@/components/SubscriberChart';
 import ContentIdeasTicker from '@/components/ContentIdeasTicker';
 import FinalCTA from '@/components/FinalCTA';
-import CurvedDivider from '@/components/CurvedDivider';
 import { WaitlistButton } from '@/components/WaitlistButton';
 
 export default function Home() {

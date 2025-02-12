@@ -136,7 +136,7 @@ export default function SocialFeed() {
 
               <div className="px-4 pb-2">
                 <p className="sm:text-md text-sm font-semibold text-gray-200">
-                  Listened to some classic jazz at work today and I'm feeling creative.
+                  Listened to some classic jazz at work today and I&apos;m feeling creative.
                   Surprise live music making session tonight at 8:00pm est. for all of
                   my fans! Looking forward to chatting with you all and making some
                   hits!!
@@ -248,7 +248,7 @@ export default function SocialFeed() {
               <div className="px-4 pb-2">
                 <p className="text-md font-semibold text-gray-200">
                   I had a magical day through Amsterdam today. Took some beautiful pictures that
-                  I can't wait to mint and raffle off to you all next week! Here's a sneak peek of one of my favorites.   
+                  I can&apos;t wait to mint and raffle off to you all next week! Here&apos;s a sneak peek of one of my favorites.   
                 </p>
               </div>
 
