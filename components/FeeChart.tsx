@@ -58,13 +58,7 @@ export default function FeeChart() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Modify the renderCustomLabel to be responsive
-  const renderCustomLabel = (props: {
-    x: number;
-    y: number;
-    width: number;
-    value: number;
-  }) => {
+  const renderCustomLabel = (props: any) => {
     const { x, y, width, value } = props;
     return (
       <text 
@@ -73,9 +67,9 @@ export default function FeeChart() {
         fill="white" 
         textAnchor="middle" 
         dy={-10}
-        className="font-semibold text-sm sm:text-xl lg:text-2xl" // Responsive text size
+        className="font-semibold text-sm sm:text-xl lg:text-2xl"
       >
-        {`${value.toFixed(1)}%`}
+        {`${Number(value).toFixed(1)}%`}
       </text>
     );
   };

@@ -35,14 +35,9 @@ export default function SubscriberChart() {
     }, 100);
   }, []);
 
-  const renderCustomLabel = (props: {
-    x: number;
-    y: number;
-    width: number;
-    value: number;
-  }) => {
+  const renderCustomLabel = (props: any) => {
     const { x, y, width, value } = props;
-    const formattedValue = value.toLocaleString();
+    const formattedValue = Number(value).toLocaleString();
     return (
       <text 
         x={x + (width/2)}
@@ -61,13 +56,8 @@ export default function SubscriberChart() {
   }
 
   // Add this custom tick renderer function before your return statement
-  const CustomXAxisTick = ({ x, y, payload }: {
-    x: number;
-    y: number;
-    payload: {
-      value: string | number;
-    };
-  }) => {
+  const CustomXAxisTick = (props: any) => {
+    const { x, y, payload } = props;
   
   return (
     <g transform={`translate(${x},${y})`}>
@@ -112,7 +102,7 @@ export default function SubscriberChart() {
         }}
         className="pt-32 text-3xl md:text-5xl font-semibold text-center text-white px-8 lg:px-64 md:px-48 sm:px-32"
       >
-        <h5>Not Sure Whether to Charge For Your Content? Here&apos;s Why You Shouild:</h5>
+        <h5>Not Sure Whether to Charge For Your Content? Here&apos;s Why You Should:</h5>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 60}}
