@@ -11,6 +11,7 @@ interface FormData {
 
 export function WaitlistButton({ className = "" }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false); 
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -23,7 +24,7 @@ export function WaitlistButton({ className = "" }) {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/submit-waitlist', {
+      const response = await fetch('/api/SubmitWaitlist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,6 +37,7 @@ export function WaitlistButton({ className = "" }) {
         const modal = document.getElementById('waitlist-modal') as HTMLDialogElement;
         modal?.close();
         setFormData({ name: '', email: '', creatorType: '', socialHandle: '' });
+        setShowSuccess(true);  
       } else {
         alert('Something went wrong. Please try again.');
       }
@@ -54,6 +56,10 @@ export function WaitlistButton({ className = "" }) {
   const closeModal = () => {
     const modal = document.getElementById('waitlist-modal') as HTMLDialogElement;
     modal?.close();
+  };
+
+  const closeSuccess = () => {  // Add this function
+    setShowSuccess(false);
   };
 
   return (
@@ -82,7 +88,7 @@ export function WaitlistButton({ className = "" }) {
           </div>
           
           <div>
-            <label className="block mb-1 text-lg lg:text-xl text-white font-semi">Name (Optional)</label>
+            <label className="block mb-1 text-lg lg:text-xl text-white font-semi">Name</label>
             <input 
               type="text" 
               required 
@@ -137,6 +143,35 @@ export function WaitlistButton({ className = "" }) {
           </button>
         </form>
       </dialog>
+      {showSuccess && (
+        <dialog
+          open
+          className="fixed inset-0 flex items-center justify-center z-50"
+        >
+          <div className="bg-black p-8 rounded-lg max-w-md mx-auto text-center relative">
+            <button 
+              onClick={closeSuccess}
+              className="absolute top-4 right-4 text-white hover:text-gray-300"
+            >
+              ✕
+            </button>
+            <h2 className="text-2xl font-bold text-white mb-4">Thanks for signing up!</h2>
+            <p className="text-white text-lg">
+              We&apos;re so excited you&apos;re joining us. We&apos;ll be in touch with product updates soon!
+            </p>
+            <button
+              onClick={closeSuccess}
+              className="mt-6 px-6 py-2 gradient-bg text-black rounded-lg hover:bg-[#3030DD] font-semibold"
+            >
+              Close
+            </button>
+          </div>
+          <div 
+            className="fixed inset-0 bg-black/50 -z-10"
+            onClick={closeSuccess}
+          />
+        </dialog>
+      )}
     </>
   );
 }

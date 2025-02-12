@@ -86,6 +86,55 @@ body {
   }
 }
 
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideInWithBounce {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  70% {
+      transform: translateX(20px); /* Overshoots by 20px */
+      opacity: 1;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+.slideIn {
+  opacity: 0; /* Initial state */
+  transform: translateX(-200vw); /* Initial position */
+  animation: slideIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s forwards; /* 'forwards' keeps final state */
+}
+
+@keyframes slideIn {
+  0% {
+      transform: translateX(-200vw);
+      opacity: 0;
+  }
+  70% {
+      transform: translateX(20px);
+      opacity: 1;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
 .animate-float {
   animation: float ease-in-out infinite;
 }

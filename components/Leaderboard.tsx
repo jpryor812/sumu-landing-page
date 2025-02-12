@@ -1,5 +1,6 @@
 import { leaderboardData } from '@/const/leaderboardData';
 import LeaderboardRow from './LeaderboardRow';
+import Link from 'next/link';
 
 export default function Leaderboard() {
 
@@ -49,8 +50,12 @@ export default function Leaderboard() {
                   <p>Earn $100s worth of $SUMU or USDC every month</p>
                 </div>
                 <div className="text-md text-white text-right font-semibold sm:pt-4 pb-4">
-                  <p>You can learn more about $SUMU below 👇</p>
-                </div>
+                <p>$SUMU represents ownership in Sumu the company, thereby making creators on Sumu, owners of Sumu. You can learn more about $SUMU{' '}
+                <Link href="/SumuExplained" className="underline hover:text-gray-300">
+                  here
+                </Link>
+                </p>                
+              </div>
               </div>
             </div>
           </div>

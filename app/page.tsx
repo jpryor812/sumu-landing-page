@@ -10,6 +10,7 @@ import SubscriberChart from '@/components/SubscriberChart';
 import ContentIdeasTicker from '@/components/ContentIdeasTicker';
 import FinalCTA from '@/components/FinalCTA';
 import { WaitlistButton } from '@/components/WaitlistButton';
+import PolicyAndService from '@/components/PolicyAndService';
 
 export default function Home() {
   return (
@@ -47,6 +48,7 @@ export default function Home() {
           <SubscriberChart />
           <ContentIdeasTicker />
           <FinalCTA />
+          <PolicyAndService />
       </div>
       </div>
       </StaticAura>
