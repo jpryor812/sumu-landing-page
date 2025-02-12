@@ -46,7 +46,7 @@ export default function Leaderboard() {
               {/* Text section */}
               <div className="flex flex-col justify-center p-2 sm:p-6">
                 <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white text-center font-semibold">
-                  <p>Earn $100s worth of $SUMU every month</p>
+                  <p>Earn $100s worth of $SUMU or USDC every month</p>
                 </div>
                 <div className="text-md text-white text-right font-semibold sm:pt-4 pb-4">
                   <p>You can learn more about $SUMU below 👇</p>

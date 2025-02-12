@@ -61,8 +61,13 @@ export default function SubscriberChart() {
   }
 
   // Add this custom tick renderer function before your return statement
-const CustomXAxisTick = (props: any) => {
-  const { x, y, payload } = props;
+  const CustomXAxisTick = ({ x, y, payload }: {
+    x: number;
+    y: number;
+    payload: {
+      value: string | number;
+    };
+  }) => {
   
   return (
     <g transform={`translate(${x},${y})`}>

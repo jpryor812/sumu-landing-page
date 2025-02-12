@@ -13,9 +13,7 @@ interface RecommendationData {
   recommendation: string;
 }
 
-interface RecommendationCardProps extends RecommendationData {}
-
-const RecommendationCard: FC<RecommendationCardProps> = ({
+const RecommendationCard: FC<RecommendationData> = ({
   creator,
   creatorImage,
   description,

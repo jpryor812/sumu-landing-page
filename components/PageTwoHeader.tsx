@@ -8,7 +8,7 @@ export default function PageTwoHeader() {
     const targetRef = useRef(null);
     const rotationComplete = useRef(false);
     
-    const { scrollYProgress, scrollY } = useScroll({
+    const { scrollYProgress } = useScroll({
         target: targetRef,
         offset: ["start start", "end start"]
     });

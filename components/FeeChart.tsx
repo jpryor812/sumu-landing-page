@@ -11,7 +11,6 @@ interface DataItem {
 }
 
 export default function FeeChart() {
-  const [isMounted, setIsMounted] = useState(false);
   const [animatedData, setAnimatedData] = useState<DataItem[]>([]);
   
   const finalData: DataItem[] = [
@@ -23,7 +22,6 @@ export default function FeeChart() {
   ];
 
   useEffect(() => {
-    setIsMounted(true);
     
     // Start all bars at 0
     const initialData = finalData.map(item => ({ ...item, fee: 0 }));

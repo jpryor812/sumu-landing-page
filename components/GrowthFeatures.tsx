@@ -1,7 +1,7 @@
 import SocialFeed from "./SocialFeed"
 import RecommendationComponent from "./RecommendationComponents";
 
-export default function () {
+export default function GrowthFeatures() {
     return (
         <div className = "flex flex-col pt-48">
             <div className = "text-center text-3xl sm:text-4xl md:text-5xl font-semibold px-8 sm:px-24 text-white">
