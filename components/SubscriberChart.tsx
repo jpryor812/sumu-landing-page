@@ -35,13 +35,24 @@ export default function SubscriberChart() {
     }, 100);
   }, []);
 
-  const renderCustomLabel = (props: any) => {
-    const { x, y, width, value } = props;
+  interface CustomLabelProps {
+    x?: string | number;
+    y?: string | number;
+    width?: string | number;
+    value?: string | number;
+  }
+  
+  const renderCustomLabel = (props: CustomLabelProps) => {
+    const { x = 0, y = 0, width = 0, value = 0 } = props;
+    const xPos = typeof x === 'string' ? parseFloat(x) : x;
+    const yPos = typeof y === 'string' ? parseFloat(y) : y;
+    const widthVal = typeof width === 'string' ? parseFloat(width) : width;
+    
     const formattedValue = Number(value).toLocaleString();
     return (
       <text 
-        x={x + (width/2)}
-        y={y} 
+        x={xPos + (widthVal/2)}
+        y={yPos} 
         fill="white" 
         textAnchor="middle" 
         dy={-10}
