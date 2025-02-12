@@ -67,38 +67,47 @@ export default function SubscriberChart() {
   }
 
   // Add this custom tick renderer function before your return statement
-  const CustomXAxisTick = (props: any) => {
-    const { x, y, payload } = props;
+  interface CustomTickProps {
+    x?: string | number;
+    y?: string | number;
+    payload: {
+      value: string | number;
+    };
+  }
   
-  return (
-    <g transform={`translate(${x},${y})`}>
-      <text 
-        x={0} 
-        y={18} 
-        dy={0} 
-        textAnchor="middle" 
-        fill="white"
-        fontSize="20"
-        fontWeight="600"
-      >
-        {payload.value}
-      </text>
-      {/* Add the subscription text only under "Suum" */}
-      {payload.value === "Suum" && (
-        <text
-          x={0}
-          y={30}
-          textAnchor="middle"
+  const CustomXAxisTick = (props: CustomTickProps) => {
+    const { x = 0, y = 0, payload } = props;
+    const xPos = typeof x === 'string' ? parseFloat(x) : x;
+    const yPos = typeof y === 'string' ? parseFloat(y) : y;
+    
+    return (
+      <g transform={`translate(${xPos},${yPos})`}>
+        <text 
+          x={0} 
+          y={18} 
+          dy={0} 
+          textAnchor="middle" 
           fill="white"
-          fontSize="12"
-          fontWeight="400"
+          fontSize="20"
+          fontWeight="600"
         >
-          ($20/month subscription)
+          {payload.value}
         </text>
-      )}
-    </g>
-  );
-};
+        {payload.value === "Suum" && (
+          <text
+            x={0}
+            y={30}
+            textAnchor="middle"
+            fill="white"
+            fontSize="12"
+            fontWeight="400"
+          >
+            ($20/month subscription)
+          </text>
+        )}
+      </g>
+    );
+  };
 
   return (
     <div>
