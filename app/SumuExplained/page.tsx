@@ -44,7 +44,7 @@ export default function SumuExplained() {
             </p>
 
             <p className="text-lg">
-                If you have any questions, feel free to send me an email, and I'll be sure to get back to you quickly.
+                If you have any questions, feel free to send me an email, and I will get back to you quickly.
             </p>
         </div>
 

@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import { WaitlistButton } from '@/components/WaitlistButton';
 import QuestionButton from './QuestionButton';
-import { motion } from 'framer-motion';
-
 
 export default function MainPage() {
     return (
