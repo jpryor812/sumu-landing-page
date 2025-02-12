@@ -67,7 +67,7 @@ export function WaitlistButton({ className = "" }) {
 
       <dialog 
         id="waitlist-modal" 
-        className="py-6 px-12 bg-green-900 rounded-lg max-w-lg w-1/3 backdrop:bg-black/50"
+        className="py-6 px-12 bg-green-900 rounded-lg max-w-lg md:w-3/4 lg:w-1/2 xl:1/3 backdrop:bg-black/50"
       >
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex justify-between items-center">
@@ -82,48 +82,48 @@ export function WaitlistButton({ className = "" }) {
           </div>
           
           <div>
-            <label className="block mb-1 text-xl text-white font-semi">Name (Optional)</label>
+            <label className="block mb-1 text-lg lg:text-xl text-white font-semi">Name (Optional)</label>
             <input 
               type="text" 
               required 
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full text-xl p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full text-lg lg:text-xl p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Your name"
             />
           </div>
 
           <div>
-            <label className="block mb-1 text-xl text-white font-semi">Email</label>
+            <label className="block mb-1 text-lg lg:text-xl text-white font-semi">Email</label>
             <input 
               type="email" 
               required 
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full p-2 border text-xl rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border text-lg lg:text-xl rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="you@example.com"
             />
           </div>
 
           <div>
-            <label className="block mb-1 text-xl text-white font-semi">Most Active Platform</label>
+            <label className="block mb-1 text-lg lg:text-xl text-white font-semi">Most Active Platform</label>
             <input 
               type="text" 
               required 
               value={formData.creatorType}
               onChange={(e) => setFormData({ ...formData, creatorType: e.target.value })}
-              className="w-full text-xl p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full text-lg lg:text-xl p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="e.g., Instagram, X, YouTube"
             />
           </div>
 
           <div>
-            <label className="block mb-1 text-xl text-white font-semi">Social Media Handle</label>
+            <label className="block mb-1 text-lg lg:text-xl text-white font-semi">Social Media Handle</label>
             <input 
               type="text" 
               value={formData.socialHandle}
               onChange={(e) => setFormData({ ...formData, socialHandle: e.target.value })}
-              className="w-full p-2 border text-xl rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border text-lg lg:text-xl rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="@yourusername"
             />
           </div>

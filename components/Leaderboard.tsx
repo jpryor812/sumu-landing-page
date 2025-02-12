@@ -30,7 +30,7 @@ export default function Leaderboard() {
             {/* Change to column on smaller screens */}
             <div className="flex flex-col custom:flex-row justify-around items-center gap-2">
               {/* Add scaling container for the chart */}
-              <div className="transform scale-[0.50] sm:scale-75 md:scale-90 lg:scale-100 origin-top -mb-48 sm:-mb-24 md:mb-2">
+              <div className="transform scale-[0.45] sm:scale-75 md:scale-90 lg:scale-100 origin-top -mb-48 sm:-mb-24 md:mb-2">
                 <div className="flex flex-col border-4 border-white pb-4 rounded-2xl px-6">
                   <div className="flex flex-row justify-around pt-4 pb-8 gap-2">
                     {subs.map((sub) => (

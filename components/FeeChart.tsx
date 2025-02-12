@@ -106,20 +106,20 @@ export default function FeeChart() {
           delay: 0.5,
           ease: "easeOut"
         }}
-        className="flex flex-col lg:flex-row justify-around px-4 sm:px-8 lg:px-12" // Changed to column on mobile
+        className="flex flex-col lg:flex-row justify-around px-4 xl:px-8" // Changed to column on mobile
       >
-        <div className="flex flex-col items-center lg:pl-8 pt-4">
+        <div className="flex flex-col items-center lg:pl-4 pt-4">
           <div className="flex flex-col py-4 sm:py-12">
-            <div className="text-5xl sm:text-7xl lg:text-9xl gradient-text">
+            <div className="text-5xl sm:text-7xl md:text-7xl lg:text-9xl gradient-text">
               <p>4.9%</p>
-              <div className="text-3xl sm:text-4xl lg:text-6xl text-white">
+              <div className="text-3xl sm:text-4xl md:text-4xl lg:text-6xl text-white">
                 <p>Platform Fees</p>
               </div>
             </div>
             <div className="flex flex-col py-6 sm:py-12">
-              <div className="text-5xl sm:text-7xl lg:text-9xl gradient-text">
+              <div className="text-5xl sm:text-7xl md:text-7xl lg:text-9xl gradient-text">
                 <p>0%</p>
-                <div className="text-3xl sm:text-4xl lg:text-6xl text-white">
+                <div className="text-3xl sm:text-4xl md:text-4xl lg:text-6xl text-white">
                   <p>Transaction Fees</p>
                 </div>
               </div>
@@ -136,7 +136,9 @@ export default function FeeChart() {
               margin={{ top: 20, right: 20, left: 10, bottom: 5 }}
             >
               {/* ... defs remain the same ... */}
+              {dimensions.width >= 500 ? ( // Only show grid on tablets and larger
               <CartesianGrid strokeDasharray="3 3" vertical={false} />
+            ) : null}              
               <XAxis 
                 dataKey="platform" 
                 stroke="white" 

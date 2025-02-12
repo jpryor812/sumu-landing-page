@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, FC } from 'react';
+import React, { useState, useEffect, FC, useRef } from 'react';
 import { MousePointer2 } from 'lucide-react';
 
 interface RecommendationData {
@@ -30,17 +30,19 @@ const RecommendationCard: FC<RecommendationCardProps> = ({
         <div className="flex items-center gap-4">
           <img src={creatorImage} alt={creator} className="w-11 h-11 rounded-full" />
           <div>
+            <div className = "flex flex-row gap-4">
             <h3 className="font-semibold text-gray-800 text-sm sm:text-md">{creator}</h3>
+            </div>
             <p className="text-gray-600 text-xs sm:text-sm lg:px-4">{description}</p>
           </div>
         </div>
-        <div className="ml-4 flex items-start">
-          <button className="w-24 px-3 py-2 rounded-full bg-blue-600 text-xs sm:text-sm font-semibold text-gray-100 hover:bg-blue-700 transition-colors">
+        <div className="ml-2 flex items-start">
+          <button className="sm:w-24 w-20 px-2 py-2 sm:px-3 sm:py-2 rounded-full bg-blue-600 text-xs sm:text-sm font-semibold text-gray-100 hover:bg-blue-700 transition-colors">
             View Page
           </button>
         </div>
       </div>
-      <div className="mt-1 flex items-center gap-2">
+      <div className="mt-1 flex items-center gap-8 sm:gap-4 md:gap-2">
         <div className="flex -space-x-2">
           <img src={recCreator1} alt="Recommender 1" className="w-8 h-8 rounded-full border-2 border-white" />
           {recCreator2 && (
@@ -71,6 +73,9 @@ const RecommendationComponent: FC = () => {
   const [clicked, setClicked] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const componentRef = React.useRef(null);
+  const followingButtonRef = useRef<HTMLButtonElement>(null);
+  const mutualButtonRef = useRef<HTMLButtonElement>(null);
+
 
   const followingData: RecommendationData[] = [
     {
@@ -138,24 +143,37 @@ const RecommendationComponent: FC = () => {
         threshold: 0.1 // Trigger when 10% of the component is visible
       }
     );
-
+  
     if (componentRef.current) {
       observer.observe(componentRef.current);
     }
-
+  
     return () => {
       if (componentRef.current) {
         observer.unobserve(componentRef.current);
       }
     };
   }, [isInView]);
-
+  
+  const getCursorPosition = (buttonRef: React.RefObject<HTMLButtonElement | null>) => {
+    if (buttonRef.current && componentRef.current) {
+      const buttonRect = buttonRef.current.getBoundingClientRect();
+      const componentRect = componentRef.current.getBoundingClientRect();  
+      
+      return {
+        x: buttonRect.left - componentRect.left + (buttonRect.width / 2),
+        y: buttonRect.top - componentRect.top + (buttonRect.height / 2)
+      };
+    }
+    return { x: 0, y: 0 };
+  };
+  
   useEffect(() => {
     if (showCursor && isInView) {
       const runAnimationCycle = async () => {
         // Move to Mutual Fans
         await new Promise(resolve => setTimeout(resolve, 1000));
-        setCursorPosition({ x: 320, y: 90 });
+        setCursorPosition(getCursorPosition(mutualButtonRef));
         
         await new Promise(resolve => setTimeout(resolve, 1000));
         setClicked(true);
@@ -168,7 +186,7 @@ const RecommendationComponent: FC = () => {
         await new Promise(resolve => setTimeout(resolve, 4000));
         
         // Move back to Creators You Follow
-        setCursorPosition({ x: 120, y: 90 });
+        setCursorPosition(getCursorPosition(followingButtonRef));
         
         await new Promise(resolve => setTimeout(resolve, 1000));
         setClicked(true);
@@ -176,29 +194,27 @@ const RecommendationComponent: FC = () => {
         await new Promise(resolve => setTimeout(resolve, 500));
         setActiveTab('following');
         setClicked(false);
-
+  
         // Pause between cycles
         await new Promise(resolve => setTimeout(resolve, 1000));
       };
-
-      // Function to run both cycles
+  
       const runFullAnimation = async () => {
         await runAnimationCycle();
         await runAnimationCycle();
         setShowCursor(false); // Hide cursor after both cycles are complete
       };
-
+  
       runFullAnimation();
       
-      // Cleanup function
       return () => {
         setShowCursor(false);
         setClicked(false);
         setActiveTab('following');
       };
     }
-  }, [showCursor, isInView]);
-
+  }, [showCursor, isInView]); // Removed windowWidth dependency
+  
   const currentData = activeTab === 'following' ? followingData : mutualFansData;
 
   return (
@@ -216,28 +232,31 @@ const RecommendationComponent: FC = () => {
           />
         </div>
       )}
+      <div ref={componentRef} className="bg-white border-4 border-gray-200 rounded-xl p-1 relative">
       <div className="max-w-3xl mx-auto pt-2 px-6">
         <h2 className="text-center text-lg sm:text-xl text-gray-800 font-bold mb-6">Recommendations</h2>
         <div className="flex align-center justify-center gap-4 pb-2 border-b">
-          <button 
-            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
-              activeTab === 'following' 
-                ? 'bg-blue-600 text-white' 
-                : 'text-gray-400 border'
-            }`}
-          >
-            By Creators You Follow
-          </button>
-          <button 
-            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
-              activeTab === 'mutual' 
-                ? 'bg-blue-600 text-white' 
-                : 'text-gray-400 border'
-            }`}
-          >
-            By Mutual Fans
-          </button>
-        </div>
+        <button 
+          ref={followingButtonRef}
+          className={`px-2 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+            activeTab === 'following' 
+              ? 'bg-blue-600 text-white' 
+              : 'text-gray-400 border'
+          }`}
+        >
+          By Creators You Follow
+        </button>
+        <button 
+          ref={mutualButtonRef}
+          className={`px-2 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+            activeTab === 'mutual' 
+              ? 'bg-blue-600 text-white' 
+              : 'text-gray-400 border'
+          }`}
+        >
+          By Mutual Fans
+        </button>
+      </div>
         <div className="divide-y">
           {currentData.map((item, index) => (
             <div key={index} className="transition-all duration-500 ease-in-out" style={{
@@ -250,6 +269,7 @@ const RecommendationComponent: FC = () => {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };

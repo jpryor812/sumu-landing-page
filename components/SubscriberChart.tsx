@@ -135,7 +135,7 @@ const CustomXAxisTick = (props: any) => {
             </div>
           </div>
         <div className="flex items-center justify-center md:p-2 lg:p-6">
-        <div className="-mb-32 sm:mb-2 transform scale-[0.6] sm:scale-75 md:scale-90 lg:scale-90 xl:scale-100 origin-top">
+        <div className="-mb-32 sm:mb-2 transform scale-[0.55] sm:scale-75 md:scale-90 lg:scale-90 xl:scale-100 origin-top">
           <div className="max-w-3xl flex flex-col rounded-3xl p-4 items-center">
             <h2 className="text-white text-center mb-4 text-xl font-semibold">Average Subscribers/Followers needed for $1,000/month from ads</h2>
             <BarChart 
