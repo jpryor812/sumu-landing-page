@@ -11,6 +11,7 @@ import ContentIdeasTicker from '@/components/ContentIdeasTicker';
 import FinalCTA from '@/components/FinalCTA';
 import { WaitlistButton } from '@/components/WaitlistButton';
 import PolicyAndService from '@/components/PolicyAndService';
+import SocialMedia from '@/components/SocialMedia';
 
 export default function Home() {
   return (
@@ -48,6 +49,7 @@ export default function Home() {
           <SubscriberChart />
           <ContentIdeasTicker />
           <FinalCTA />
+          <SocialMedia />
           <PolicyAndService />
       </div>
       </div>
