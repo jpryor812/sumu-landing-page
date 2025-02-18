@@ -16,8 +16,8 @@ export default function FeeChart() {
 
   const finalData: DataItem[] = [
     { platform: 'SuperRare', fee: 15.0, color: '#D1D1D1' },
-    { platform: 'Substack', fee: 14.0, color: '#D1D1D1' },
-    { platform: 'Patreon', fee: 12.0, color: '#D1D1D1' },
+    { platform: 'Substack', fee: 15.0, color: '#D1D1D1' },
+    { platform: 'Patreon', fee: 14.0, color: '#D1D1D1' },
     { platform: 'Gumroad', fee: 11.0, color: '#D1D1D1' },
     { platform: 'Sumu', fee: 4.9, color: '#00bf63' }
   ];
@@ -139,7 +139,7 @@ export default function FeeChart() {
         </div>
         <div className="flex items-center justify-center p-4 sm:p-8">
           <div className="w-full max-w-3xl flex flex-col rounded-3xl p-2 sm:p-4 items-center">
-            <h2 className="text-white text-center mb-4 text-lg sm:text-xl lg:text-2xl font-semibold">Platform and Transaction Fees</h2>
+            <h2 className="text-white text-center mb-4 text-lg sm:text-xl lg:text-2xl font-semibold">Average Platform and Transaction Fees</h2>
             <BarChart 
               width={dimensions.width} 
               height={dimensions.height} 
