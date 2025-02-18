@@ -1,10 +1,23 @@
 import QuestionButton from '@/components/QuestionButton';
 import { WaitlistButton } from '@/components/WaitlistButton';
 import Image from 'next/image';
+import Link from 'next/link'
 
 export default function SumuExplained() {
     return (
 
+        <div>
+        <div className="flex justify-start items-end px-6 sm:px-8 md:px-12 lg:px-16 mt-4 sm:mt-8">
+        <Link href="/">
+            <Image
+                src="/Sumu-logo.png"
+                alt="Sumu Logo"
+                width={360}
+                height={360}
+                className="w-[60px] sm:w-[80px]" 
+            />
+        </Link>
+    </div>
         <div className="relative flex flex-col items-center">
         {/* Top Image */}
         <div className="w-full flex justify-center mb-8">
@@ -70,6 +83,7 @@ export default function SumuExplained() {
                 </div>
             </div>
             </div>
+        </div>
         </div>
     );
 }
