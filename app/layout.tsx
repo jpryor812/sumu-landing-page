@@ -14,13 +14,66 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sumu | Create Together, Grow Together.",
+  metadataBase: new URL('https://getsumu.xyz'),
+  title: {
+    default: "Sumu | Create Together, Grow Together.",
+    template: "%s | Sumu"
+  },
   description: "Sumu is a premium content platform for creators with the lowest platform fees, no transaction fees, and rewards in real money or ownership in Sumu itself!",
+  keywords: [
+    'creator platform',
+    'content monetization',
+    'creator economy',
+    'platform fees',
+    'creator rewards',
+    'digital content',
+    'content creators',
+    'Sumu platform'
+  ],
+  authors: [{ name: 'Sumu Team' }],
+  creator: 'Sumu',
+  publisher: 'Sumu',
   icons: {
     icon: [
       { url: "/sumu-vert-square.png" },
       { url: "/sumu-vert-square.png", type: "image/png" },
     ],
+  },
+  openGraph: {
+    type: 'website',
+    siteName: 'Sumu',
+    title: 'Sumu | Create Together, Grow Together',
+    description: 'Join the first creator platform where every creator is rewarded for the success of all creators. Industry-low 4.9% fees.',
+    url: 'https://getsumu.xyz',
+    images: [
+      {
+        url: '/Sumu-logo.png', // Create an optimized image for social sharing
+        width: 1200,
+        height: 630,
+        alt: 'Sumu Platform',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sumu | Create Together, Grow Together',
+    description: 'Join the first creator platform where every creator is rewarded for the success of all creators.',
+    creator: '@get_sumu',
+    images: ['/Sumu-logo.png'], // Optimized for Twitter
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://getsumu.xyz',
   },
 };
 

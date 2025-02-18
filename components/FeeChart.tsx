@@ -11,17 +11,20 @@ interface DataItem {
 }
 
 export default function FeeChart() {
+  const [isMounted, setIsMounted] = useState(false);
   const [animatedData, setAnimatedData] = useState<DataItem[]>([]);
-  
+
   const finalData: DataItem[] = [
     { platform: 'SuperRare', fee: 15.0, color: '#D1D1D1' },
     { platform: 'Substack', fee: 14.0, color: '#D1D1D1' },
     { platform: 'Patreon', fee: 12.0, color: '#D1D1D1' },
     { platform: 'Gumroad', fee: 11.0, color: '#D1D1D1' },
-    { platform: 'Suum', fee: 4.9, color: '#00bf63' }
+    { platform: 'Sumu', fee: 4.9, color: '#00bf63' }
   ];
 
+  // Set the component as mounted when it loads
   useEffect(() => {
+    setIsMounted(true);
     
     // Start all bars at 0
     const initialData = finalData.map(item => ({ ...item, fee: 0 }));
@@ -57,6 +60,11 @@ export default function FeeChart() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Don't render the chart until the component has mounted
+  if (!isMounted) {
+    return null;
+  }
 
   interface CustomLabelProps {
     x?: string | number;
@@ -96,7 +104,7 @@ export default function FeeChart() {
           delay: 0.5,
           ease: "easeOut"
         }}
-        className="sm:pt-16 pt-2 text-3xl sm:text-3xl lg:text-5xl font-semibold text-center text-white lg:px-64 md:px-48 sm:px-32 px-4" // Added mobile padding
+        className="sm:pt-16 pt-2 text-3xl sm:text-3xl lg:text-5xl font-semibold text-center text-white lg:px-64 md:px-48 sm:px-32 px-4"
       >
         <h5>It starts with the lowest fees in the creator economy</h5>
       </motion.div>
@@ -109,7 +117,7 @@ export default function FeeChart() {
           delay: 0.5,
           ease: "easeOut"
         }}
-        className="flex flex-col lg:flex-row justify-around px-4 xl:px-8" // Changed to column on mobile
+        className="flex flex-col lg:flex-row justify-around px-4 xl:px-8"
       >
         <div className="flex flex-col items-center lg:pl-4 pt-4">
           <div className="flex flex-col py-4 sm:py-12">
@@ -138,10 +146,7 @@ export default function FeeChart() {
               data={animatedData}
               margin={{ top: 20, right: 20, left: 10, bottom: 5 }}
             >
-              {/* ... defs remain the same ... */}
-              {dimensions.width >= 500 ? ( // Only show grid on tablets and larger
-              <CartesianGrid strokeDasharray="3 3" vertical={false} />
-            ) : null}              
+              {dimensions.width >= 500 && <CartesianGrid strokeDasharray="3 3" vertical={false} />}
               <XAxis 
                 dataKey="platform" 
                 stroke="white" 

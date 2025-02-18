@@ -19,7 +19,7 @@ export default function SubscriberChart() {
     { platform: 'YouTube', fee: 15000, color: '#D1D1D1' },
     { platform: 'Instagram', fee: 10000, color: '#D1D1D1' },
     { platform: 'Blog', fee: 10000, color: '#D1D1D1' },
-    { platform: 'Suum', fee: 50, color: '#00bf63' }
+    { platform: 'Sumu', fee: 50, color: '#00bf63' }
   ];
 
   useEffect(() => {
