@@ -1,5 +1,4 @@
 import BlogCard from '@/components/BlogCard'
-import QuestionButton from '@/components/QuestionButton'
 import { WaitlistButton } from '@/components/WaitlistButton'
 import Image from 'next/image'
 import Link from 'next/link'
