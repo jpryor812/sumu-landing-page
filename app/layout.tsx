@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     description: 'Join the first creator platform where every creator is rewarded for the success of all creators. Industry-low 4.9% fees.',
     url: 'https://getsumu.xyz',
     images: [{
-      url: '/social-share-page.png',  // Your optimized sharing image
+      url: 'https://getsumu.xyz/social-share-page.png',  // Your optimized sharing image
       width: 1200,
       height: 630,
       alt: 'Sumu - Create Together, Grow Together',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: 'Sumu | Create Together, Grow Together',
     description: 'Join the first creator platform where every creator is rewarded for the success of all creators.',
     creator: '@get_sumu',
-    images: ['/social-share-page.png'], // Your optimized Twitter image
+    images: ['https://getsumu.xyz/social-share-page.png'], // Your optimized Twitter image
   },
 
   robots: {
