@@ -45,22 +45,21 @@ export const metadata: Metadata = {
     title: 'Sumu | Create Together, Grow Together',
     description: 'Join the first creator platform where every creator is rewarded for the success of all creators. Industry-low 4.9% fees.',
     url: 'https://getsumu.xyz',
-    images: [
-      {
-        url: '/Sumu-logo.png', // Create an optimized image for social sharing
-        width: 1200,
-        height: 630,
-        alt: 'Sumu Platform',
-      },
-    ],
+    images: [{
+      url: '/social-share-page.png',  // Your optimized sharing image
+      width: 1200,
+      height: 630,
+      alt: 'Sumu - Create Together, Grow Together',
+    }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sumu | Create Together, Grow Together',
     description: 'Join the first creator platform where every creator is rewarded for the success of all creators.',
     creator: '@get_sumu',
-    images: ['/Sumu-logo.png'], // Optimized for Twitter
+    images: ['/social-share-page.png'], // Your optimized Twitter image
   },
+
   robots: {
     index: true,
     follow: true,
