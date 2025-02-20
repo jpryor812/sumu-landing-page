@@ -83,6 +83,49 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            function getURLParams() { 
+              class UrlParams { 
+                constructor(search) { 
+                  this.qs = (search || location.search).substr(1); 
+                  this.params = {}; 
+                  this.parseQuerstring(); 
+                } 
+                parseQuerstring() { 
+                  if (!this.qs) return;
+                  this.qs.split('&').reduce((a, b) => { 
+                    let [key, val] = b.split('='); 
+                    a[key] = val; 
+                    return a; 
+                  }, this.params); 
+                } 
+                get(key) { 
+                  return this.params[key]; 
+                } 
+              } 
+              const searchParams = new UrlParams(window.location.search); 
+              return searchParams; 
+            } 
+            
+            function getQueryParam(name) { 
+              const param = getURLParams().get(name); 
+              return (!!param ? decodeURIComponent(param) : undefined); 
+            }; 
+            
+            window.referrerId = getQueryParam("ref");
+            
+            // Store referral ID in localStorage if it exists
+            if (window.referrerId) {
+              localStorage.setItem('referral_data', JSON.stringify({
+                referrer: window.referrerId,
+                timestamp: new Date().toISOString()
+              }));
+            }
+          `
+        }} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

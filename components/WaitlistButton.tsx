@@ -24,10 +24,14 @@ export function WaitlistButton({ className = "" }) {
     setIsSubmitting(true);
 
     try {
+      // Get referral data from localStorage
+      const referralData = localStorage.getItem('referral_data');
+
       const response = await fetch('/api/SubmitWaitlist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          ...(referralData && { 'x-referral-data': referralData })
         },
         body: JSON.stringify(formData),
       });
@@ -37,7 +41,9 @@ export function WaitlistButton({ className = "" }) {
         const modal = document.getElementById('waitlist-modal') as HTMLDialogElement;
         modal?.close();
         setFormData({ name: '', email: '', creatorType: '', socialHandle: '' });
-        setShowSuccess(true);  
+        // Clear referral data after successful submission
+        localStorage.removeItem('referral_data');
+        setShowSuccess(true);
       } else {
         alert('Something went wrong. Please try again.');
       }

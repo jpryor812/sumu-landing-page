@@ -1,3 +1,4 @@
+// app/api/SubmitWaitlist/route.ts
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
@@ -5,6 +6,17 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     
+    // Get referral data from the request headers
+    const referralData = req.headers.get('x-referral-data');
+    let referralInfo = null;
+    if (referralData) {
+      try {
+        referralInfo = JSON.parse(referralData);
+      } catch (e) {
+        console.error('Error parsing referral data:', e);
+      }
+    }
+
     // Validate required fields
     if (!body.email || !body.creatorType) {
       return NextResponse.json(
@@ -39,18 +51,22 @@ export async function POST(req: Request) {
       },
     });
 
+    // Build referral information string if it exists
+    const referralSection = referralInfo 
+      ? `**Referral Code:** ${referralInfo.referrer}
+**First Visit Time:** ${new Date(referralInfo.timestamp).toLocaleString()}`
+      : '';
+
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: 'justin@getsumu.xyz',     
       subject: 'New SUMU Waitlist Submission',
-      html: `
-        <h2>New Waitlist Submission</h2>
-        <p><strong>Name:</strong> ${body.name || 'Not provided'}</p>
-        <p><strong>Email:</strong> ${body.email}</p>
-        <p><strong>Creator Type:</strong> ${body.creatorType}</p>
-        <p><strong>Social Handle:</strong> ${body.socialHandle || 'Not provided'}</p>
-        <p><strong>Submission Time:</strong> ${new Date().toLocaleString()}</p>
-      `,
+      text: `**Name:** ${body.name || 'Not provided'}
+**Email:** ${body.email}
+**Creator Type:** ${body.creatorType}
+**Social Handle:** ${body.socialHandle || 'Not provided'}
+${referralSection}
+**Submission Time:** ${new Date().toLocaleString()}`
     });
 
     return NextResponse.json({ message: 'Success' });
