@@ -18,7 +18,7 @@ export default function FeeChart() {
     { platform: 'SuperRare', fee: 15.0, color: '#D1D1D1' },
     { platform: 'Substack', fee: 15.0, color: '#D1D1D1' },
     { platform: 'Patreon', fee: 14.0, color: '#D1D1D1' },
-    { platform: 'Gumroad', fee: 11.0, color: '#D1D1D1' },
+    { platform: 'Passes', fee: 12.0, color: '#D1D1D1' },
     { platform: 'Sumu', fee: 4.9, color: '#00bf63' }
   ];
 

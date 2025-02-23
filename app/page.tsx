@@ -12,7 +12,7 @@ import FinalCTA from '@/components/FinalCTA';
 import { WaitlistButton } from '@/components/WaitlistButton';
 import PolicyAndService from '@/components/PolicyAndService';
 import SocialMedia from '@/components/SocialMedia';
-
+import EarningsComparison from '@/components/EarningsComparison';
 export default function Home() {
   return (
     <main className="relative">
@@ -46,6 +46,7 @@ export default function Home() {
                 </div>
             </div>
           <GrowthFeatures />
+          <EarningsComparison />
           <SubscriberChart />
           <ContentIdeasTicker />
           <FinalCTA />

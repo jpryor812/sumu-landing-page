@@ -93,7 +93,7 @@ export default function SubscriberChart() {
         >
           {payload.value}
         </text>
-        {payload.value === "Suum" && (
+        {payload.value === "Sumu" && (
           <text
             x={0}
             y={30}
