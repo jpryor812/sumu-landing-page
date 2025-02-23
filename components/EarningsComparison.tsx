@@ -301,7 +301,7 @@ export default function EarningsComparison() {
 
       <div className="pt-2 px-4 sm:px-8">
         <div className="text-center text-white text-lg sm:text-xl lg:text-2xl italic font-semibold">
-          <p>Already on one of these platforms? Let us know and we'll help you port your content and subscribers to Sumu!</p>
+          <p>Already on one of these platforms? Let us know and we&apos;ll help you port your content and subscribers to Sumu!</p>
         </div>
         <div className="flex justify-center w-full sm:w-1/2 mx-auto pt-4">
           <QuestionButton />
