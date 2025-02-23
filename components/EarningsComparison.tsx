@@ -50,7 +50,7 @@ const platforms: PlatformData[] = [
     feePerSubscriber: "",
     perMonth: "",
     perYear: "",
-    imageUrl: "/Sumu-logo-round.png"
+    imageUrl: "/sumu-logo-round.png"
   },
 ];
 
