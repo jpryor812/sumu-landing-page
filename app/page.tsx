@@ -46,7 +46,9 @@ export default function Home() {
                 </div>
             </div>
           <GrowthFeatures />
-          <EarningsComparison />
+          <div id="earnings-comparison">
+            <EarningsComparison />
+          </div>
           <SubscriberChart />
           <ContentIdeasTicker />
           <FinalCTA />

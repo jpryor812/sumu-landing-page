@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function SumuFeesVsPatreon() {
   return (
-    <article className="max-w-4xl mx-auto px-4 py-8">
+    <article className="max-w-4xl mx-auto px-4 py-16">
       <h1 className="text-4xl font-bold mb-6">
         Patreon vs. Sumu Fees for a Large YouTube Channel: A Case Study
       </h1>
@@ -46,7 +46,7 @@ export default function SumuFeesVsPatreon() {
         />
       </div>
 
-      <p className="mb-6 md:text-lg lg:text-xl">
+      <p className="mb-8 md:text-lg lg:text-xl">
         Since it&apos;s incredibly difficult to earn a living wage from YouTube payouts, Jon, the creator of Asianometry, created a Patreon channel where he charges fans $6 for early access to his videos. He likely pays the 8% platform fee to Patreon, though he could be paying up to 12%, and pays 2.9% + $0.30 for U.S. payments and 3.9% + $0.30 for international payments.
       </p>
 
@@ -67,11 +67,11 @@ export default function SumuFeesVsPatreon() {
             />
         </div>
 
-      <p className="mb-6 md:text-lg lg:text-xl">
+      <p className="mb-8 md:text-lg lg:text-xl">
         Let&apos;s assume a 50/50 split in his fans in terms of international and U.S.-based to say, on average, Jon pays 8% + 3.4% + $0.30 per subscriber per month to Patreon and payment processing companies. Therefore, on a $6-a-month transaction, Jon is losing about $0.98 of his earnings per transaction, close to 17%!
       </p>
 
-      <p className="mb-6 md:text-lg lg:text-xl">
+      <p className="mb-8 md:text-lg lg:text-xl">
         So, despite Patreon marketing an 8% platform fee, creators who charge a low price for their content could lose around 17% of their earnings! So, if Jon wanted to make $72,000 a year for his content, he would&apos;t need 1,000 fans paying $6 a month; he would actually need about 1,200 fans paying $6 a month! That means about 200 of those 1200 fans are paying Patreon and payment processing companies—not Jon.
       </p>
 
@@ -92,11 +92,11 @@ export default function SumuFeesVsPatreon() {
             />
         </div>
 
-      <p className="mb-6 md:text-lg lg:text-xl">
+      <p className="mb-8 md:text-lg lg:text-xl">
         Instead, Jon should use Sumu and retain more of his earnings.
       </p>
 
-      <div className="mb-6 md:text-lg lg:text-xl">
+      <div className="mb-8 md:text-lg lg:text-xl">
         <p className="font-bold">
           First, Sumu&apos;s platform fee is 4.9%, with 0% transaction fees in the U.S. and internationally. Therefore, if Jon were to use Sumu with 1,000 fans paying $6 a month, he would save almost $10,000 just from fees. Think about what you could do with $10,000, especially without having to do any extra work!
         </p>
@@ -112,7 +112,7 @@ export default function SumuFeesVsPatreon() {
         />
       </div>
 
-      <p className="mb-6 md:text-lg lg:text-xl">
+      <p className="mb-8 md:text-lg lg:text-xl">
         Also, Sumu rewards top creators with actual USDC back, up to $100s a month, and even gives creators ownership in Sumu itself. Therefore, as the company becomes more valuable, creators&pos; shares in Sumu similarly get more valuable! If Jon were to join as an early creator and the platform were to become as successful as Patreon, that $72,000 he was shooting for from his fans could be dwarfed by his actual ownership in Sumu. Plus, this ownership is of no cost to him; it is purely a reward for being on Sumu.
       </p>
 

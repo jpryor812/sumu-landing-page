@@ -9,9 +9,14 @@ export default async function sitemap() {
     },
     {
       url: 'https://getsumu.xyz/blog/posts/sumu-fees-vs-patreon',
-      lastModified: new Date('2024-02-17').toISOString(),
+      lastModified: new Date('2024-02-24').toISOString(),
       priority: 0.8,
     },
-    // Add more URLs as needed
+    {
+      url: 'https://getsumu.xyz/blog/posts/payment-processing-fees',
+      lastModified: new Date('2024-02-24').toISOString(),
+      priority: 0.8,
+    },
+
   ];
 }

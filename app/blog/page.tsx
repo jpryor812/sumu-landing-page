@@ -49,7 +49,6 @@ export default function BlogHomepage() {
                     date={post.date}
                     title={post.title}
                     description={post.description}
-                    isReversed={(index + 1) % 3 === 2} // Will be true for items 2, 5, 8, etc.
                     link={post.link}  
                     />
                 ))}
