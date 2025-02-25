@@ -1,6 +1,8 @@
 import { WaitlistButton } from '@/components/WaitlistButton';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import Link from 'next/link';
+
 
 export const metadata: Metadata = {
   title: 'Why Transaction Fees Are Quietly Killing Your Earnings as a Creator',
@@ -147,9 +149,9 @@ export default function TransactionFeesKiller() {
       <p className="mb-8 md:text-lg lg:text-xl">
         Feel free to play with our earnings calculator to see how much you could earn with our low fee and zero transaction fee
         system compared to older platforms.{' '}
-        <a className="text-blue-600 underline" href="/#earnings-comparison">
-            Try it now! 
-        </a>
+        <Link href="/#earnings-comparison">
+            <a className="text-blue-600 underline">Go to Earnings Comparison</a>
+        </Link>
       </p>
 
       <div className="pt-6 mb-4 px-16 sm:px-2">
