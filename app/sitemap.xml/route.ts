@@ -22,6 +22,11 @@ export function GET() {
       <lastmod>2024-02-24</lastmod>
       <priority>0.8</priority>
     </url>
+    <url>
+      <loc>${baseUrl}/blog/posts/how-creators-fight-back</loc>
+      <lastmod>2024-02-27</lastmod>
+      <priority>0.8</priority>
+    </url>
   </urlset>`;
 
   return new NextResponse(sitemap, {

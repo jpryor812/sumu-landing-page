@@ -28,6 +28,35 @@ export const metadata: Metadata = {
 
 export default function TransactionFeesKiller() {
   return (
+    <div>
+    <div className="flex flex-row items-end justify-between mt-4 sm:mt-8 px-4 sm:px-8 md:px-10 lg:px-12">
+    {/* Left group */}
+    <div className="flex items-end gap-4 sm:gap-6 md:gap-8 lg:gap-12">
+    <Link 
+        href="/" >
+            <Image
+                src="/Sumu-logo.png"
+                alt="Sumu Logo"
+                width={360}
+                height={360}
+                className="w-[60px] sm:w-[80px]" 
+            />
+    </Link>
+        <Link 
+        href="/blog" 
+        className="hidden sm:inline text-gray-100 underline hover:text-blue-600 transition-colors cursor-pointer mb-1"
+    >
+        Blog
+    </Link>
+    </div>
+
+    {/* Right group */}
+    <div className="flex items-end align-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
+        <div className="bg-[#4040FF] text-white font-semibold text-center text-xs sm:text-sm rounded-3xl py-1 sm:py-2 max-w-xs">
+            <WaitlistButton />
+        </div>
+    </div>
+    </div>
     <article className="max-w-4xl mx-auto px-4 py-16">
       <h1 className="text-4xl font-bold mb-6">
         Why Transaction Fees Are Quietly Killing Your Earnings as a Creator
@@ -149,8 +178,8 @@ export default function TransactionFeesKiller() {
       <p className="mb-8 md:text-lg lg:text-xl">
         Feel free to play with our earnings calculator to see how much you could earn with our low fee and zero transaction fee
         system compared to older platforms.{' '}
-        <Link href="/#earnings-comparison">
-            <a className="text-blue-600 underline">Go to Earnings Comparison</a>
+        <Link href="/#earnings-comparison" className="text-blue-600 underline">
+          Go to Earnings Comparison
         </Link>
       </p>
 
@@ -160,5 +189,6 @@ export default function TransactionFeesKiller() {
         </div>
       </div>
     </article>
+    </div>
   );
 }

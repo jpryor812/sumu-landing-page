@@ -1,6 +1,7 @@
 import { WaitlistButton } from '@/components/WaitlistButton';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Patreon vs. Sumu Fees for a Large YouTube Channel: A Case Study',
@@ -25,6 +26,35 @@ export const metadata: Metadata = {
 
 export default function SumuFeesVsPatreon() {
   return (
+    <div>
+    <div className="flex flex-row items-end justify-between mt-4 sm:mt-8 px-4 sm:px-8 md:px-10 lg:px-12">
+    {/* Left group */}
+    <div className="flex items-end gap-4 sm:gap-6 md:gap-8 lg:gap-12">
+    <Link 
+        href="/" >
+            <Image
+                src="/Sumu-logo.png"
+                alt="Sumu Logo"
+                width={360}
+                height={360}
+                className="w-[60px] sm:w-[80px]" 
+            />
+    </Link>
+        <Link 
+        href="/blog" 
+        className="hidden sm:inline text-gray-100 underline hover:text-blue-600 transition-colors cursor-pointer mb-1"
+    >
+        Blog
+    </Link>
+    </div>
+
+    {/* Right group */}
+    <div className="flex items-end align-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
+        <div className="bg-[#4040FF] text-white font-semibold text-center text-xs sm:text-sm rounded-3xl py-1 sm:py-2 max-w-xs">
+            <WaitlistButton />
+        </div>
+    </div>
+    </div>
     <article className="max-w-4xl mx-auto px-4 py-16">
       <h1 className="text-4xl font-bold mb-6">
         Patreon vs. Sumu Fees for a Large YouTube Channel: A Case Study
@@ -148,5 +178,6 @@ export default function SumuFeesVsPatreon() {
                 Note: Jon is not actually a creator on Sumu; I used his channel purely as a mock example. Although, maybe after seeing this, he will join 😊 
             </p>
     </article>
+    </div>
   );
 }
