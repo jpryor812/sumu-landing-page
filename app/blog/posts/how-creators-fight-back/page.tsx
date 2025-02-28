@@ -6,7 +6,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'The Power of Two-Sided Connections: How Creators Can Fight Back Against AI Influencers',
   description:
-    'AI influencers are taking revenue from human creators, but the key to creator success in 2025 and beyond is direct audience engagement. Here&apos;s why building two-sided connections with your fans is the future of creator monetization.',
+    'AI influencers are taking revenue from human creators, but the key to creator success in 2025 and beyond is direct audience engagement. Here is why building two-sided connections with your fans is the future of creator monetization.',
   keywords: [
     'AI influencers',
     'creator economy',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Power of Two-Sided Connections: How Creators Can Fight Back Against AI Influencers',
     description:
-      'AI influencers are taking revenue from human creators, but the key to creator success in 2025 and beyond is direct audience engagement. Here&apos;s why building two-sided connections with your fans is the future of creator monetization.',
+      'AI influencers are taking revenue from human creators, but the key to creator success in 2025 and beyond is direct audience engagement. Here is why building two-sided connections with your fans is the future of creator monetization.',
   }
 };
 
@@ -83,9 +83,9 @@ export default function AIInfluencersVsCreators() {
     href="https://artsmart.ai/blog/ai-influencer-statistics/#:~:text=63%25%20of%20professionals%20plan%20to%20use%20Artificial%20Intelligence%20(AI),marketing%20in%20the%20coming%20years.&text=This%20growing%20interest%20reflects%20a,and%20data%2Ddriven%20influencer%20campaigns."
     target="_blank"
     rel="noopener noreferrer"
-    className="text-blue-600 underline"
+    className="text-blue-400 underline"
   >
-    &quot;63% of professionals plan to use Artificial Intelligence (AI) and Machine Learning (ML) for influencer marketing in the coming years.&qout;
+    &quot;63% of professionals plan to use Artificial Intelligence (AI) and Machine Learning (ML) for influencer marketing in the coming years.&quot;
   </a>
 </p>
 

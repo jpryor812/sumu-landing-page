@@ -9,7 +9,7 @@ export const blogPosts = [
     },
     date: "February 27, 2024",
     title: 'The Power of Two-Sided Connections: How Creators Can Fight Back Against AI Influencers',
-    description:'AI influencers are taking revenue from human creators, but the key to creator success in 2025 and beyond is direct audience engagement. Here&apos;s why building two-sided connections with your fans is the future of creator monetization...',
+    description:'AI influencers are taking revenue from human creators, but the key to creator success in 2025 and beyond is direct audience engagement. Here is why building two-sided connections with your fans is the future of creator monetization...',
     link: "/blog/posts/how-creators-fight-back" 
   },  
   {
