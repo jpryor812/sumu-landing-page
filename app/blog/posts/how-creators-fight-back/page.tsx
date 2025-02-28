@@ -128,7 +128,7 @@ export default function AIInfluencersVsCreators() {
         <li>Sell exclusive group chats for deeper discussions.</li>
         <li>Host live Q&A sessions where fans can interact with you.</li>
         <li>Offer 1-on-1 coaching, lessons, or direct messaging.</li>
-        <li>Run fan communities** where members pay to access premium content.</li>
+        <li>Run fan communities where members pay to access premium content.</li>
       </ul>
 
       <p className="mb-8 md:text-lg lg:text-xl">
