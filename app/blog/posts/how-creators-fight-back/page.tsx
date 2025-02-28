@@ -85,7 +85,7 @@ export default function AIInfluencersVsCreators() {
     rel="noopener noreferrer"
     className="text-blue-600 underline"
   >
-    "63% of professionals plan to use Artificial Intelligence (AI) and Machine Learning (ML) for influencer marketing in the coming years."
+    &quot;63% of professionals plan to use Artificial Intelligence (AI) and Machine Learning (ML) for influencer marketing in the coming years.&qout;
   </a>
 </p>
 
