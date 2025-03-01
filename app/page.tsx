@@ -1,4 +1,3 @@
-import PageTwoHeader from '@/components/PageTwoHeader'
 import FeeChart from '@/components/FeeChart'
 import Leaderboard from '@/components/Leaderboard';
 import RewardsExplanation from '@/components/RewardsExplanation';
