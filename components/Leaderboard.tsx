@@ -47,7 +47,7 @@ export default function Leaderboard() {
               {/* Text section */}
               <div className="flex flex-col justify-center p-2 sm:p-6">
                 <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white text-center font-semibold">
-                  <p>Earn $100s worth of $SUMU or USDC every month</p>
+                  <p>Sumu is the first platform to reward creators with <span className="underline decoration-3">equity</span></p>
                 </div>
                 <div className="text-sm sm:text-md text-white text-right font-semibold sm:pt-4 pb-6">
                 <p>$SUMU represents ownership in Sumu the company, thereby making creators on Sumu, owners of Sumu. You can learn more about $SUMU{' '}

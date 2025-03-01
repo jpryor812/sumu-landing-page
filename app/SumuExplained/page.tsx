@@ -8,16 +8,16 @@ export default function SumuExplained() {
 
         <div>
         <div className="flex justify-start items-end px-6 sm:px-8 md:px-12 lg:px-16 mt-4 sm:mt-8">
-        <Link href="/">
-            <Image
-                src="/Sumu-logo.png"
-                alt="Sumu Logo"
-                width={360}
-                height={360}
-                className="w-[60px] sm:w-[80px]" 
-            />
-        </Link>
-    </div>
+            <Link href="/">
+                <Image
+                    src="/Sumu-logo.png"
+                    alt="Sumu Logo"
+                    width={360}
+                    height={360}
+                    className="w-[60px] sm:w-[80px]" 
+                />
+            </Link>
+        </div>
         <div className="relative flex flex-col items-center">
         {/* Top Image */}
         <div className="w-full flex justify-center mb-8">
@@ -35,29 +35,60 @@ export default function SumuExplained() {
             </div>
 
 
-        <div className="text-white space-y-6 max-w-4xl sm:px-2 px-16"> {/* space-y-6 adds vertical spacing between paragraphs */}
+        <div className="text-white space-y-6 max-w-4xl sm:px-2 px-16">
+            <p className="text-lg font-bold mb-8">
+                Please read the following to understand how you will receive $SUMU, how it is valued, and how you can exchange it for real monetary value at a future event. This is by no means a binding agreement, but more of a plan of what we intend to do.
+            </p>
+
+            <p className="text-lg font-bold">But first…</p>
+
             <p className="text-lg">
-                Every month, the fastest-growing creators on Sumu will be rewarded for their growth. Now, creators can choose to receive USDC for their reward, be rewarded in $SUMU, or a combination of both. $SUMU represents ownership in Sumu, a private, for-profit Nevada-C Corp. $SUMU will not be tradable until a major liquidity event, such as a large purchase of $SUMU by VC firm, an ICO or IPO, or a full sale of the company. There is no guarantee that $SUMU will ever be worth anything, and its initial price will be nominal. Though, like an early-stage startup investment, should Sumu grow and become a successful company, you could receive a significant financial outcome by being an early adopter. Therefore, you should consider $SUMU an investment in Sumu, the company, at the expense of the USDC you would otherwise have received as bonus reward payments.
+                I hope you're excited about this opportunity to own a stake in the platform you're helping to build as I am. For some reason, startups don't make their users owners, when in most cases, much like is the case with Sumu, our platform would be nothing without its users. Therefore, to make you as loyal to Sumu as we are, we should treat you as owners and let you experience the upside for you contribution. Your earnings from fans or USDC rewards from us would not be enough to thank you for your early adoption in our platform. Equity, with its massive upside, is that way to thank you.
             </p>
 
             <p className="text-lg">
-                Initially, $SUMU will have no price associated with it. You will receive a certain amount of tokens in place of USDC, but receiving 1,000 $SUMU instead of 100 $USDC does not mean one $SUMU is worth $0.10. As a reminder, $SUMU will not have any monetary value until a major investment event. Should a future investor invest $1,000,000 by purchasing 10,000,000 $SUMU in a private transaction, your $SUMU would then be worth $0.10 each, at which point you would have the opportunity to sell or continue to hold your $SUMU. Should an investor purchase 10,000,000 $SUMU by paying $10,000,000, then each $SUMU would be worth $1.00, at which point you would have another opportunity to sell or continue holding.
+                We want to beat Patreon, and we can only do so if you make excellent content for your fans, work hard to grow, invite your creator friends, and stay with us for the long haul. If we do beat Patreon, it's reasonable to assume Sumu would have at least a $1,500,000,000 valuation, the last publicly disclosed valuation of Patreon as of this writing. If we do, there's a chance that hundreds of creators earn at least six figures worth of equity and thousands earn at least five figures. The earlier you join and build your brand, the better your chance to reach that millionaire potential on Sumu.
             </p>
 
             <p className="text-lg">
-                To further compensate you for your belief in our platform, $SUMU holders will receive a quarterly dividend of bonus $SUMU, the amount of which will be dependent on how much $SUMU you hold at that moment, with larger holders receiving more. This holding agreement is otherwise known as staking.
+                For example, we plan to distribute about 0.05% of $SUMU per month, for about 0.6% total per year. If you are an early creator who contributes meaningfully to the platform early on and stays for many years, you have a reasonable chance to accrue at least 0.02% in Sumu. At a $1,500,000,000 valuation, your stake would be worth $300,000. Of course, we hope to blow past that valuation.
             </p>
 
-            <p className="text-lg">
-                I hope you consider the opportunity to accept all or at least some of your monthly rewards in $SUMU. As I said, I want creators within the community to feel a part of a collective pursuit in helping build an incredible platform that creators and fans love. By owning $SUMU, I believe you will feel that ownership more while receiving the opportunity for significant financial outcomes, just as anyone on the actual Sumu team would feel, should the platform become successful. That being said, I will be perfectly content should you choose to accept all your rewards in USDC and none in $SUMU—whatever makes you happier for being on our platform.
+            <p className="text-lg font-bold text-center my-8">
+                LET'S MAKE IT HAPPEN!
             </p>
 
+            <h2 className="text-2xl font-bold mb-4">Understanding $SUMU and Your Ownership in Sumu</h2>
+            
+            <h3 className="text-xl font-bold">What is $SUMU?</h3>
             <p className="text-lg">
-                Our collective success is in each of your hands. Grow your channel, refer your friends, and $SUMU will have an increasing chance of being successful. I hope you choose to be an owner alongside me!
+                $SUMU is a virtual token that represents an ownership interest in Sumu, a private, for‑profit Nevada C‑Corporation. In simple terms, holding $SUMU gives you a stake in our company—much like owning shares in a traditional business. However, please note that $SUMU is currently a virtual currency and is not traded on public exchanges. Its value is nominal until a future liquidity event (such as a private investor round, like an investment from a venture capital firm, or an IPO) sets a market-based conversion price.
             </p>
 
+            <h3 className="text-xl font-bold">How Does $SUMU Work?</h3>
+            <h4 className="text-lg font-bold">How to Get $SUMU:</h4>
             <p className="text-lg">
-                If you have any questions, feel free to send me an email, and I will get back to you quickly.
+                Each month, as part of our commitment to rewarding creators for growth, you will receive a certain amount of $SUMU directly related to how much revenue you contribute to the overall revenue of Sumu. $SUMU is treated as closely as possible to our private company stock. Creators become eligible to earn $SUMU at the beginning of their first full month on the platform. So, if you join March 28th or March 2nd, you'll have to wait until April 1st to begin earning rewards, as we will reward you for your full month contribution to the platform.
+            </p>
+
+            <h4 className="text-lg font-bold">Valuation and Conversion:</h4>
+            <p className="text-lg">
+                At the time of distribution, $SUMU is assigned a nominal value (for example, $0.01 per token or another rate determined at that time) purely for internal accounting and reward purposes. This initial value does not guarantee that $SUMU will always trade at that price. Instead, when a significant liquidity event occurs—such as when a venture capital firm invests in us or if we go public—the conversion price will be established based on that event's valuation.
+            </p>
+
+            <h3 className="text-xl font-bold">Important Disclosures</h3>
+            <h4 className="text-lg font-bold">No Guaranteed Value:</h4>
+            <p className="text-lg">
+                The current nominal value of $SUMU is set solely for the purpose of facilitating our reward program. There is no guarantee that $SUMU will maintain that value, or that it will ever have a liquid market price. Its actual value will be determined only when an external liquidity event occurs.
+            </p>
+
+            <h4 className="text-lg font-bold">Risk Factors:</h4>
+            <p className="text-lg">
+                Investing in $SUMU means you are taking on the same risks as any early-stage equity investment. There is a risk that the company may not grow as expected, and as a result, the eventual conversion value of your $SUMU tokens may be less than anticipated.
+            </p>
+
+            <p className="text-lg mt-8">
+                If you have any questions about how $SUMU works or what it means for your ownership in Sumu, please contact us at justin@getsumu.xyz.
             </p>
         </div>
 

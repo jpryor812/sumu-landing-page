@@ -14,7 +14,7 @@ export default function GrowthFeatures() {
                     <p>A Native Social Feed to Promote Your Content to all Fans and Creators in Sumu</p>
                 </div>
                 <div className = "text-white text-sm">
-                    <p>This is a great opportunity to post snippets or teasers of your content to curious scrollers looking for something new</p>
+                    <p>Take advantage of a high-intent userbase of fans and creators by posting teasers of your best content to attract that new loyal fan</p>
                 </div>
             </div>
             <div className="px-6 pt-4 pb-4 justify-center rounded-xl bg-gradient-to-b from-[#002308] via-[#003808] to-[#002308] flex flex-col md:w-3/4 lg:w-1/2">

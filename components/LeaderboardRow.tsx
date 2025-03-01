@@ -28,11 +28,11 @@ export default function LeaderboardRow({ entry }: Props) {
         </div>
 
         <div className="w-24 text-md text-center">
-          <p>{entry.previousSubs} subs</p>
+          <p>{entry.previousSubs} fans</p>
         </div>
 
         <div className="w-24 text-center">
-          <p className="text-blue-500">{entry.currentSubs} subs</p>
+          <p className="text-blue-500">{entry.currentSubs} fans</p>
         </div>
 
         <div className="w-16 text-center">
