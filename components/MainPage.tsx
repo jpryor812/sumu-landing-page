@@ -71,8 +71,8 @@ export default function MainPage() {
                 <div className="text-md text-white text-center pb-1 px-4 sm:px-24 md:px-48 lg:px-64 animate-fade-in">
                     <p>Sign up to lock-in your industry-low 4.9% platform fee and be the first to receive $SUMU</p>
                 </div>
-                <div className="text-md text-white text-center pb-8 sm:px-24 md:px-48 lg:px-64 animate-fade-in">
-                    <p>More information below 👇</p>
+                <div className="text-xl sm:text-2xl md:text-3xl mt-4 font-semibold text-white text-center pb-8 sm:px-24 md:px-48 lg:px-64 animate-fade-in">
+                    <p>So How Does It Work??? 👇</p>
                 </div>
             </div>
         </div>

@@ -25,14 +25,7 @@ export default function Home() {
         </div>
       </MouseFollowingAura>
 
-      {/* Second section with scroll gradient */}
-      <StaticAura>
-      <div className="min-h-screen">
-        <div className="relative z-10">
-          <PageTwoHeader />
-          </div>
-      </div>
-      </StaticAura>
+
 
       <StaticAura>
       <div className="min-h-screen fee-chart-section"> 
