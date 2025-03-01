@@ -43,11 +43,11 @@ export default function SumuExplained() {
             <p className="text-lg font-bold">But first…</p>
 
             <p className="text-lg">
-                I hope you're excited about this opportunity to own a stake in the platform you're helping to build as I am. For some reason, startups don't make their users owners, when in most cases, much like is the case with Sumu, our platform would be nothing without its users. Therefore, to make you as loyal to Sumu as we are, we should treat you as owners and let you experience the upside for you contribution. Your earnings from fans or USDC rewards from us would not be enough to thank you for your early adoption in our platform. Equity, with its massive upside, is that way to thank you.
+                I hope you&apos;re excited about this opportunity to own a stake in the platform you&apos;re helping to build as I am. For some reason, startups don&apos;t make their users owners, when in most cases, much like is the case with Sumu, our platform would be nothing without its users. Therefore, to make you as loyal to Sumu as we are, we should treat you as owners and let you experience the upside for you contribution. Your earnings from fans or USDC rewards from us would not be enough to thank you for your early adoption in our platform. Equity, with its massive upside, is that way to thank you.
             </p>
 
             <p className="text-lg">
-                We want to beat Patreon, and we can only do so if you make excellent content for your fans, work hard to grow, invite your creator friends, and stay with us for the long haul. If we do beat Patreon, it's reasonable to assume Sumu would have at least a $1,500,000,000 valuation, the last publicly disclosed valuation of Patreon as of this writing. If we do, there's a chance that hundreds of creators earn at least six figures worth of equity and thousands earn at least five figures. The earlier you join and build your brand, the better your chance to reach that millionaire potential on Sumu.
+                We want to beat Patreon, and we can only do so if you make excellent content for your fans, work hard to grow, invite your creator friends, and stay with us for the long haul. If we do beat Patreon, it&apos;s reasonable to assume Sumu would have at least a $1,500,000,000 valuation, the last publicly disclosed valuation of Patreon as of this writing. If we do, there&apos;s a chance that hundreds of creators earn at least six figures worth of equity and thousands earn at least five figures. The earlier you join and build your brand, the better your chance to reach that millionaire potential on Sumu.
             </p>
 
             <p className="text-lg">
@@ -55,7 +55,7 @@ export default function SumuExplained() {
             </p>
 
             <p className="text-lg font-bold text-center my-8">
-                LET'S MAKE IT HAPPEN!
+                LET&apos;S MAKE IT HAPPEN!
             </p>
 
             <h2 className="text-2xl font-bold mb-4">Understanding $SUMU and Your Ownership in Sumu</h2>
@@ -68,12 +68,12 @@ export default function SumuExplained() {
             <h3 className="text-xl font-bold">How Does $SUMU Work?</h3>
             <h4 className="text-lg font-bold">How to Get $SUMU:</h4>
             <p className="text-lg">
-                Each month, as part of our commitment to rewarding creators for growth, you will receive a certain amount of $SUMU directly related to how much revenue you contribute to the overall revenue of Sumu. $SUMU is treated as closely as possible to our private company stock. Creators become eligible to earn $SUMU at the beginning of their first full month on the platform. So, if you join March 28th or March 2nd, you'll have to wait until April 1st to begin earning rewards, as we will reward you for your full month contribution to the platform.
+                Each month, as part of our commitment to rewarding creators for growth, you will receive a certain amount of $SUMU directly related to how much revenue you contribute to the overall revenue of Sumu. $SUMU is treated as closely as possible to our private company stock. Creators become eligible to earn $SUMU at the beginning of their first full month on the platform. So, if you join March 28th or March 2nd, you&apos;ll have to wait until April 1st to begin earning rewards, as we will reward you for your full month contribution to the platform.
             </p>
 
             <h4 className="text-lg font-bold">Valuation and Conversion:</h4>
             <p className="text-lg">
-                At the time of distribution, $SUMU is assigned a nominal value (for example, $0.01 per token or another rate determined at that time) purely for internal accounting and reward purposes. This initial value does not guarantee that $SUMU will always trade at that price. Instead, when a significant liquidity event occurs—such as when a venture capital firm invests in us or if we go public—the conversion price will be established based on that event's valuation.
+                At the time of distribution, $SUMU is assigned a nominal value (for example, $0.01 per token or another rate determined at that time) purely for internal accounting and reward purposes. This initial value does not guarantee that $SUMU will always trade at that price. Instead, when a significant liquidity event occurs—such as when a venture capital firm invests in us or if we go public—the conversion price will be established based on that event&apos;s valuation.
             </p>
 
             <h3 className="text-xl font-bold">Important Disclosures</h3>
