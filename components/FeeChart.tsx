@@ -15,7 +15,6 @@ export default function FeeChart() {
   const [animatedData, setAnimatedData] = useState<DataItem[]>([]);
 
   const finalData: DataItem[] = [
-    { platform: 'SuperRare', fee: 15.0, color: '#D1D1D1' },
     { platform: 'Substack', fee: 15.0, color: '#D1D1D1' },
     { platform: 'Patreon', fee: 14.0, color: '#D1D1D1' },
     { platform: 'Passes', fee: 12.0, color: '#D1D1D1' },
