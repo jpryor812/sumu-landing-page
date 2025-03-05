@@ -117,7 +117,7 @@ export default function SocialFeed() {
         >
           {/* First Post */}
           <div className="px-4 md:px-8 pb-6">
-            <div className="bg-[#001405] border-gray-500 border-2 rounded-2xl w-full">
+            <div className="bg-black border-gray-500 border-2 rounded-2xl w-full">
               <div className="flex items-center gap-3 p-4">
                 <Image
                   src="/alex-profile.png"
@@ -173,7 +173,7 @@ export default function SocialFeed() {
 
           {/* Second Post */}
           <div className="px-4 md:px-8 pb-6">
-            <div className="bg-[#001405] border-gray-500 border-2 rounded-2xl w-full">
+            <div className="bg-black border-gray-500 border-2 rounded-2xl w-full">
               {/* ... Same content as first post ... */}
               <div className="flex items-center gap-3 p-4">
                 <Image
@@ -228,7 +228,7 @@ export default function SocialFeed() {
 
           {/* Third Post */}
           <div className="px-4 md:px-8 pb-6">
-            <div className="bg-[#001405] border-gray-500 border-2 rounded-2xl w-full">
+            <div className="bg-black border-gray-500 border-2 rounded-2xl w-full">
               <div className="flex items-center gap-3 p-4">
                 <Image
                   src="/profile-800x800.png"
